@@ -1,5 +1,7 @@
 # Repositorio de ejercicios de JS
 
+# Repositorio de ejercicios de JS
+
 La funcion `promt()` es para solicitar datos al usuario
 
 `alert()`
