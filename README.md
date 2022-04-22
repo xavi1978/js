@@ -2,7 +2,7 @@
 
 `prompt()` solicitar datos al usuario.
 
-`alert()` mostrar emergente alerta.
+`alert()` mostrar alerta emergente.
 
 `document.write()` mostrar mensaje en página web.
 
@@ -16,6 +16,10 @@
 
 `console.info()` mostrar mensaje consola.
 
-### Otra
+### Formato
 
 `isNaN()` comprobar valor no numérico.
+
+`toUpperCase()` convertir a mayúscula.
+
+`parseInt()` interpretar valor como entero.
