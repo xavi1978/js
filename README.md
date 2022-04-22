@@ -1,23 +1,21 @@
 # Repositorio de ejercicios de JS
 
-# Repositorio de ejercicios de JS
+`prompt()` solicitar datos al usuario.
 
-La funcion `promt()` es para solicitar datos al usuario
+`alert()` mostrar emergente alerta.
 
-`alert()`
+`document.write()` mostrar mensaje en página web.
 
 ### Console
 
-[asd](asd.md)
+`console.log()` mostrar mensaje consola.
 
-`console.log()`
+`console.warn()` mostrar aviso consola.
 
-`console.warn()`
+`console.error()` mostrar error consola.
 
-`console.error()`
+`console.info()` mostrar mensaje consola.
 
-`console.info()`
+### Otra
 
-### Algo
-
-`isNaN()`
+`isNaN()` comprobar valor no numérico.
