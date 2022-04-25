@@ -20,11 +20,21 @@
 
 `isNaN()` comprobar valor no numérico.
 
-`toUpperCase()` convertir a mayúscula.
-
 `parseInt()` interpretar valor como entero.
 
 `typeof()` mostrar tipo de variable.
+
+## String
+
+`length()` mostrar longitud.
+
+`split()` dividir.
+
+`toLowerCase()` convertir a minúscula.
+
+`toUpperCase()` convertir a mayúscula.
+
+`replace()` sustituir carácter.
 
 ### Salidas de typeof()
 
