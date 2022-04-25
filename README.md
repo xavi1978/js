@@ -23,3 +23,125 @@
 `toUpperCase()` convertir a mayúscula.
 
 `parseInt()` interpretar valor como entero.
+
+`typeof()` mostrar tipo de variable.
+
+### Salidas de typeof()
+
+string, number, undefined, Nan, boolean, Infinity, matrices[], objetos{}
+
+### Primitivas
+
+int, string, boolean, float
+
+### Nuevas
+
+Int, String, Boolean, Float
+
+### Caracteres de control
+
+`\n` salto de carro.
+
+`\r` retorno de carro (salto de línea).
+
+`\t` tab.
+
+`\v` tab vertical.
+
+`\b` space.
+
+`\f` avance formulario.
+
+`\"`
+
+`\'`
+
+`\acento abierto`
+
+`\\`
+
+### Operadores
+
+`+`
+
+`-`
+
+`*`
+
+`/`
+
+`++` +1.
+
+`--` -1.
+
+`**` exponente.
+
+`%` módulo.
+
+`? :` ternario. if (cond.){ejec.}else{ejec.2} equivale a cond. ? ejec. : ejec.2.
+
+### Prioridad operadores
+
+() []
+
+/ \*
+
+\+ -
+
+&& ||
+
+### Llaves
+
+if(condición){ejecución}
+
+function nombre(parámetros){ejecución}
+
+Array[]
+
+### Condición
+
+valor1 `==` valor2
+
+valor1 `!=` valor2
+
+valor1 `<=` valor2
+
+valor1 `>=` valor2
+
+valor1 `<` valor2
+
+valor1 `>` valor2
+
+valor1 `===` valor2 (byte a byte)
+
+valor1 `!==` valor2 (byte a byte)
+
+### Operadores de segundo grado
+
+`+=`
+
+`-=`
+
+`\*=`
+
+`/=`
+
+`%=`
+
+`**=`
+
+### Operadores bitwise
+
+`&` AND
+
+`|` OR
+
+`~` NOT
+
+`^` XOR
+
+`<<` left shift
+
+`>>` right shift
+
+`>>>` unsigned right shift
