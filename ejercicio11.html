@@ -2,32 +2,6 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 11</title>
-		<script type="text/javascript">
-			document.write(
-				"Cantidad de enlaces: " +
-					document.getElementsByTagName("a").length +
-					"<br />"
-			);
-			document.write(
-				"Último enlace: " +
-					document.getElementsByTagName("a")[length - 1].href +
-					"<br />"
-			);
-			let j = 0;
-
-			for (i = 0; i == document.getElementsByTagName("a").length; i++) {
-				if (document.getElementsByTagName("a"[i]).href == "http://prueba") {
-					j++;
-				}
-			}
-			document.write("Cantidad de enlaces a http://prueba: " + j + "<br />");
-			document.write(
-				"Cantidad de enlaces del tercer párrafo: " +
-					document.getElementsByTagName("p")[2].getElementsByTagName("a")
-						.length +
-					"<br />"
-			);
-		</script>
 	</head>
 	<body>
 		<div
@@ -79,5 +53,31 @@
 			at odio.
 			<a href="http://prueba5">Sed non lectus non est pellentesque</a> auctor.
 		</p>
+		<script type="text/javascript">
+			document.write(
+				"Cantidad de enlaces: " + document.links.length + "<br />"
+			);
+
+			document.write(
+				"Último enlace: " +
+					document.links[document.links.length - 1].href +
+					"<br />"
+			);
+			let j = 0;
+
+			for (i = 0; i < document.links.length; i++) {
+				if (document.links[i].href == "http://prueba/") {
+					j++;
+				}
+			}
+			document.write("Cantidad de enlaces a http://prueba: " + j + "<br />");
+
+			document.write(
+				"Cantidad de enlaces del tercer párrafo: " +
+					document.getElementsByTagName("p")[2].getElementsByTagName("a")
+						.length +
+					"<br />"
+			);
+		</script>
 	</body>
 </html>

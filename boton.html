@@ -1,0 +1,28 @@
+<html>
+	<h1 id="title">Título</h1>
+	<p class="clase1" name="nombre">Párrafo</p>
+	<p id="nombre" class="clase1" name="nombre">Párrafo 2</p>
+	<p class="clase2">Párrafo 3</p>
+	<p class="clase2">Párrafo 4</p>
+	<input type="color" id="color" /><br /><br />
+	<button onclick="funcion()">botón1</button>
+	<button onclick="replacecolor()">botón2</button>
+	<button onclick="replacecolor1()">botón3</button>
+	<button onclick="replacecolor2(document.getElementById('color').value, this)">
+		sendColor
+	</button>
+	<script>
+		function replacecolor2(color, botom) {
+			console.log(color);
+			botom.style.backgroundColor = color;
+			//document.getElementsByTagName('button')[3].style...
+		}
+		function funcion() {
+			// console.
+			// alert
+			// document.write
+			// document.getElementsById("nombre").innerHTML = "algo";
+			// document.getElementsById("nombre").innerHTML += "algo";
+		}
+	</script>
+</html>
