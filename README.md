@@ -158,6 +158,8 @@ valor1 `!==` valor2 (byte a byte)
 
 ### Acceso a elementos
 
+`document.getElementsByTagName()` nombre etiqueta.
+
 `document.getElementById()` atributo id.
 
 `document.getElementByClassName()` atributo class.
@@ -175,3 +177,13 @@ valor1 `!==` valor2 (byte a byte)
 ## Propiedades
 
 `.length`
+
+## Ejemplos
+
+document.getElementsByTagName("p")[0].innerHTML="AAA";
+
+document.getElementsByTagName("p")[0].classList.add("rojo");
+
+document.getElementsByTagName("p")[0].classList.remove("rojo");
+
+document.getElementsByTagName("p")[0].classList.replace("rojo","azul");
