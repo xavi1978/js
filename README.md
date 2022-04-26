@@ -155,3 +155,23 @@ valor1 `!==` valor2 (byte a byte)
 `>>` right shift
 
 `>>>` unsigned right shift
+
+### Acceso a elementos
+
+`document.getElementById()` atributo id.
+
+`document.getElementByClassName()` atributo class.
+
+`document.getElementByClassName()[]` elemento n con atributo class.
+
+`document.getElementByName()` atributo name.
+
+`.innerHTML =` sustituye contenido.
+
+`.innerHTML +=` añade contenido.
+
+`.style.backgroundColor` modifica estilo.
+
+## Propiedades
+
+`.length`
