@@ -20,9 +20,17 @@
 
 `isNaN()` comprobar valor no numérico.
 
-`parseInt()` interpretar valor como entero.
+`Number()` (clase) transformar valor a número.
 
-`typeof()` mostrar tipo de variable.
+`parseInt()` (función) interpretar valor como entero.
+
+`parseFloat()` (función) interpretar valor como flotante.
+
+`typeOf()` mostrar tipo de variable.
+
+`valueOf()` mostrar valor primitivo variable.
+
+`toPrecision(cantidad de cifras incl. decimales)` redondeo.
 
 ## String
 
@@ -99,6 +107,16 @@ Int, String, Boolean, Float
 \+ -
 
 && ||
+
+### Operador unario
+
+++$i Pre-incremento.
+
+--$i Pre-decremento.
+
+$i++ Post-incremento.
+
+$i-- Post-decremento.
 
 ### Llaves
 
@@ -187,3 +205,26 @@ document.getElementsByTagName("p")[0].classList.add("rojo");
 document.getElementsByTagName("p")[0].classList.remove("rojo");
 
 document.getElementsByTagName("p")[0].classList.replace("rojo","azul");
+
+### Bucles
+
+```
+while (i < 10) {
+  text += "The number is " + i;
+  i++;
+}
+```
+
+```
+do {
+  text += "The number is " + i;
+  i++;
+}
+while (i < 10);
+```
+
+```
+for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+```

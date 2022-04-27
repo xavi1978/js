@@ -3,20 +3,20 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 10</title>
 		<script type="text/javascript">
-			let texto = prompt("Introduce un texto");
-			let texto2 = prompt("Introduce un segundo texto");
+			let $texto = prompt("Introduce un texto");
+			let $texto2 = prompt("Introduce un segundo texto");
 
-			let textoTotal = texto + "/" + texto2;
+			let $textoTotal = texto + "/" + $texto2;
 
-			textoTotal = textoTotal.toLowerCase();
-			textoTotal = textoTotal.replace(/\s/g, "");
+			$textoTotal = $textoTotal.toLowerCase();
+			$textoTotal = $textoTotal.replace(/\s/g, "");
 
-			document.write(textoTotal.length + "<br />");
+			document.write($textoTotal.length + "<br />");
 
-			const textoSeparado = textoTotal.split("/");
+			const $textoSeparado = $textoTotal.split("/");
 
-			document.write(textoSeparado[1] + "<br />");
-			document.write(textoSeparado[2] + "<br />");
+			document.write($textoSeparado[1] + "<br />");
+			document.write($textoSeparado[2] + "<br />");
 		</script>
 	</head>
 	<body></body>

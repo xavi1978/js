@@ -3,7 +3,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 7</title>
 		<script type="text/javascript">
-			let letras = [
+			let $letras = [
 				"T",
 				"R",
 				"W",
@@ -29,21 +29,21 @@
 				"E",
 				"T",
 			];
-			let numero = prompt("Introduce un número.");
+			let $numero = prompt("Introduce un número.");
 
-			if (isNaN(numero)) {
-				document.write(numero + " no es un número. <br/>");
+			if (isNaN($numero)) {
+				document.write($numero + " no es un número. <br/>");
 			} else {
-				document.write(numero + " es un número. <br/>");
+				document.write($numero + " es un número. <br/>");
 
-				if (numero > 0 && numero < 99999999) {
-					document.write(numero + " es mayor a 0 y menor a 99999999. <br/>");
+				if ($numero > 0 && $numero < 99999999) {
+					document.write($numero + " es mayor a 0 y menor a 99999999. <br/>");
 				} else {
-					document.write(numero + " fuera de rango 0-99999999. <br/>");
+					document.write($numero + " fuera de rango 0-99999999. <br/>");
 				}
 			}
 
-			alert(letras[numero % 23]);
+			alert($letras[$numero % 23]);
 		</script>
 	</head>
 </html>

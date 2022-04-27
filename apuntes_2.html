@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <script defer src="./algo"></script> -->
+	</head>
+	<body>
+		<!-- algo -->
+		<p id="p_1">P_1</p>
+		<p id="p_2">P_2</p>
+		<p id="p_3">P_3</p>
+		<p id="p_4">P_4</p>
+		<button onclick="fun1()">1</button>
+		<button onmouseover="fun2()" onmouseout="fun3()">2</button>
+		<form method="GET" action="a.html" target="_blank" onsubmit="validation()">
+			<input type="text" id="name" />
+			<input type="submit" value="submit" />
+		</form>
+		<script>
+			//Event Handlers
+			// onsubmit
+			function validation() {
+				let texto = document.getElementById("name").innerHTML;
+				console.log(texto);
+				return true;
+			}
+
+			// //onclick
+			function fun1() {
+				document.getElementById("p_1").style.backgroundColor = "red";
+			}
+			// //onmouseover
+			function fun2() {
+				document.getElementById("p_2").style.backgroundColor = "red";
+			}
+			// //onmouseout
+			function fun3() {
+				document.getElementById("p_3").style.backgroundColor = "red";
+			}
+			// //onload
+			function fun4() {
+				document.getElementById("p_4").style.backgroundColor = "red";
+			}
+		</script>
+	</body>
+</html>

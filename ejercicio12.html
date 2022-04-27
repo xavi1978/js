@@ -4,12 +4,26 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 12</title>
 		<script type="text/javascript">
-			let numero = prompt("Introduce un número mayor a 1000.");
-			if (isNaN(numero)) {
-				document.write(numero + " no es un número <br/>");
-			} else {
-				document.write(numero + " es un número <br/>");
+			let $numero = [0, 1, 2, 3, 4];
+			for (let $i = 0; $i < 5; $i++) {
+				$numero[$i] = prompt("Introduce un número mayor a 1000.");
+				if (isNaN($numero)) {
+					document.write($numero[$i] + " no es un número. <br/>");
+					$i--;
+				} else {
+					document.write($numero[$i] + " es un número. <br/>");
+				}
+				if ($numero[$i] < 1000) {
+					document.write($numero[$i] + " no es mayor a 1000. <br/>");
+					$i--;
+				} else {
+					document.write($numero[$i] + " es mayor a 1000. <br/>");
+				}
 			}
+
+			$numero.reverse;
+
+			parseFloat($numero[$0] + $numero[$1]);
 		</script>
 	</head>
 	<body></body>
