@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio 12</title>
+		<script type="text/javascript">
+			let $numeros = [0, 1, 2, 3, 4];
+
+			for (let $i = 0; $i < 5; $i++) {
+				do {
+					$numeros[$i] = prompt("Introduce un número mayor a 1000.");
+				} while (isNaN($numeros[$i]) || $numeros[$i] < 1000);
+			}
+
+			document.write($numeros);
+
+			$numeros = $numeros.reverse();
+
+			let $flotante1 = parseFloat($numeros[0] + "." + $numeros[1]);
+			let $flotante2 = parseFloat($numeros[2] + "." + $numeros[3]);
+
+			let $resultado1 = $flotante1 / $numeros[4];
+			let $resultado2 = $flotante2 / $numeros[4];
+
+			$resultado1 = $resultado1.toFixed(2);
+			$resultado2 = $resultado2.toFixed(2);
+
+			document.write($flotante1 + "/" + $numeros[4] + "=" + $resultado1);
+			document.write($flotante2 + "/" + $numeros[4] + "=" + $resultado2);
+		</script>
+	</head>
+	<body></body>
+</html>

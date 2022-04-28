@@ -9,14 +9,8 @@
 			}
 		</style>
 		<script>
-			function prueba() {
-				alert("hola");
-				document.bgColor = "red";
-			}
-
 			function colorear($color) {
-				alert("hola");
-				document.bgColor = "red";
+				document.bgColor = $color;
 			}
 		</script>
 	</head>
@@ -28,22 +22,22 @@
 		></div>
 		<div
 			class="cuadro"
-			onmouseover="colorear(green)"
+			onmouseover="colorear('green')"
 			style="background-color: green"
 		></div>
 		<div
 			class="cuadro"
-			onmouseover="colorear(blue)"
+			onmouseover="colorear('blue')"
 			style="background-color: blue"
 		></div>
 		<div
 			class="cuadro"
-			onmouseover="colorear(orange)"
+			onmouseover="colorear('orange')"
 			style="background-color: orange"
 		></div>
 		<div
 			class="cuadro"
-			onmouseover="colorear(yellow)"
+			onmouseover="colorear('yellow')"
 			style="background-color: yellow"
 		></div>
 	</body>

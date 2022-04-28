@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio Form 1</title>
+		<script type="text/javascript">
+			function comprobar() {
+				let $valor = document.getElementById("numero").value
+				if (isNaN($valor) || $valor < 1 || $valor > 100) {
+					alert("Introduce un número entre 0 y 100.");
+				} else { alert("Gracias por su visita.") ; }
+			}
+		</script>
+	</head>
+	<body>
+		<form method="get"><label for="numero">Introduce un número:</label> <input oninput="comprobar()" type="text" id="numero"></input></form>
+	</body>
+</html>

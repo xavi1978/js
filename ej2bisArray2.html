@@ -3,7 +3,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 2</title>
 		<script type="text/javascript">
-			var meses = [
+			let $meses = [
 				"Enero",
 				"Febrero",
 				"Marzo",
@@ -17,7 +17,10 @@
 				"Noviembre",
 				"Diciembre",
 			];
-			alert(meses);
+
+			for ($i = 0; $i < $meses.length; $i++) {
+				alert($meses[$i]);
+			}
 		</script>
 	</head>
 </html>

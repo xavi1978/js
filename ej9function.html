@@ -4,9 +4,9 @@
 		<title>Ejercicio 9</title>
 		<script type="text/javascript">
 			function info($txt) {
-				if ($txt === $txt.toLowercase) {
+				if ($txt === $txt.toLowerCase()) {
 					return "Minúscula.";
-				} else if ($txt === $txt.toUppercase) {
+				} else if ($txt === $txt.toUpperCase()) {
 					return "Mayúscula.";
 				} else {
 					return "Minúscula y mayúscula.";
@@ -15,8 +15,14 @@
 
 			let $texto = prompt("Introduce un texto");
 
-			alert(info("OVNI = OBJETO VOLADOR NO IDENTIFICADO"));
-			alert(info("En un lugar de la mancha..."));
+			alert("Texto introducido:" + info($texto));
+			alert(
+				"OVNI = OBJETO VOLADOR NO IDENTIFICADO " +
+					info("OVNI = OBJETO VOLADOR NO IDENTIFICADO")
+			);
+			alert(
+				"En un lugar de la mancha... " + info("En un lugar de la mancha...")
+			);
 		</script>
 	</head>
 </html>
