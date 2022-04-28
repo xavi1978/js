@@ -6,6 +6,8 @@
 
 `document.write()` mostrar mensaje en página web.
 
+`window.print()` imprime página.
+
 ### Console
 
 `console.log()` mostrar mensaje consola.
@@ -26,23 +28,53 @@
 
 `parseFloat()` (función) interpretar valor como flotante.
 
+`toPrecision(cantidad de cifras incl. decimales)` redondeo.
+
 `typeOf()` mostrar tipo de variable.
 
 `valueOf()` mostrar valor primitivo variable.
 
-`toPrecision(cantidad de cifras incl. decimales)` redondeo.
-
 ## String
+
+`charAt()` selecciona un carácter.
+
+`charCodeAt()` selecciona el código de un carácter.
+
+`concat()` concatena.
+
+`endsWith()` devuelve si termina por cadena.
+
+`includes()` devuelve si incluye subcadena.
+
+`indexOf()` primer índice de un valor (2º arg., a partir).
+
+`lastIndexOf()` último índice de un valor (2º arg., a partir).
 
 `length()` mostrar longitud.
 
+`match()` casa una cadena con regex, devuelve array coincidencia.
+
+`padEnd()` rellena sufijando otra cadena.
+
+`padStart()` rellena prefijando otra cadena.
+
+`replace()` sustituir subcadena.
+
+`slice()` extrae una subcadena.
+
 `split()` dividir.
+
+`startsWith()` devuelve si comienza por cadena
+
+`substring()` extrae una subcadena (no tiene negativo).
 
 `toLowerCase()` convertir a minúscula.
 
+`toString()` devuelve una subcadena.
+
 `toUpperCase()` convertir a mayúscula.
 
-`replace()` sustituir carácter.
+`trim()` limpia espacios a principio y final.
 
 ### Salidas de typeof()
 
@@ -110,13 +142,13 @@ Int, String, Boolean, Float
 
 ### Operador unario
 
-++$i Pre-incremento.
+`++$i` Pre-incremento.
 
---$i Pre-decremento.
+`--$i` Pre-decremento.
 
-$i++ Post-incremento.
+`$i++` Post-incremento.
 
-$i-- Post-decremento.
+`$i--` Post-decremento.
 
 ### Llaves
 
@@ -180,7 +212,7 @@ valor1 `!==` valor2 (byte a byte)
 
 `document.getElementById()` atributo id.
 
-`document.getElementByClassName()` atributo class.
+`document.getElementByClassName()` atributo class (permite varios)
 
 `document.getElementByClassName()[]` elemento n con atributo class.
 

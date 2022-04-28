@@ -11,16 +11,29 @@
 		<p id="p_4">P_4</p>
 		<button onclick="fun1()">1</button>
 		<button onmouseover="fun2()" onmouseout="fun3()">2</button>
-		<form method="GET" action="a.html" target="_blank" onsubmit="validation()">
-			<input type="text" id="name" />
-			<input type="submit" value="submit" />
+		<form name="myForm" action="a.html" method="get" target="_blank">
+			Name:
+			<input
+				type="text"
+				name="fname"
+				onmouseout="validateForm()"
+				onkeyup="validateForm()"
+			/>
+			<input type="submit" id="submit" value="Submit" disabled />
 		</form>
+		<br />
+		<br />
+		<button onclick="window.print()">Print this page</button>"
+
 		<script>
 			//Event Handlers
-			// onsubmit
-			function validation() {
-				let texto = document.getElementById("name").innerHTML;
-				console.log(texto);
+			// onkeyup
+			// onmouseout
+			// onkeypress
+			function validateForm() {
+				console.log("cosa");
+				let x = document.forms["myForm"]["fname"].value;
+
 				return true;
 			}
 
