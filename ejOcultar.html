@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio Ocultar</title>
+		<style>
+            .control {
+                display: block;
+                margin: 20px;
+            }
+        </style>
+        <script type="text/javascript">
+			function ocultar($id) {
+                document.getElementById($id).style.visibility = "hidden"
+
+			}
+            function mostrar() {
+
+                alert("hola");
+                
+                document.getElementsByClassName("control").style.visibility = "visible"
+            }
+		</script>
+	</head>
+	<body>
+		<form>
+        <button class="control" id="boton1" onmouseover="ocultar('boton1')">Botón que desaparece 1</button>
+        <button class="control" id="boton2" onmouseover="ocultar('boton2')">Botón que desaparece 2</button>
+        <button class="control" id="boton3" onmouseover="ocultar('boton3')">Botón que desaparece 3</button>
+        <button class="control" id="boton4" onmouseover="ocultar('boton4')">Botón que desaparece 4</button>
+        <button class="control" id="boton5" onmouseover="ocultar('boton5')">Botón que desaparece 5</button>
+        <input class="control" id="caja" type="text" onmouseover="ocultar('caja')" placeholder="Caja que desaparece"></input>
+        <p class="control" id="texto" onmouseover="ocultar('texto')">Texto que desaparece</p>
+        </form>
+        <p onclick="mostrar()">Pulsa aquí para que todo aparezca</p>
+    </body>
+</html>

@@ -1,10 +1,12 @@
 # Repositorio de ejercicios de JS
 
-`prompt()` solicitar datos al usuario.
-
 `alert()` mostrar alerta emergente.
 
+`confirm()` mostrar confirmación.
+
 `document.write()` mostrar mensaje en página web.
+
+`prompt()` solicitar datos al usuario.
 
 `window.print()` imprime página.
 
