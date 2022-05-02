@@ -12,13 +12,15 @@
 
 ### Console
 
-`console.log()` mostrar mensaje consola.
-
-`console.warn()` mostrar aviso consola.
+`console.assert(expresion, mensaje)` mostrar mensaje consola si expresión es falso.
 
 `console.error()` mostrar error consola.
 
 `console.info()` mostrar mensaje consola.
+
+`console.log()` mostrar mensaje consola.
+
+`console.warn()` mostrar aviso consola.
 
 ### Formato
 

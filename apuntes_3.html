@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<script>
+			/*
+			         La función cosa() hace x
+			         p_texto:
+			         */
+			cosa("", "");
+			console.log("");
+			cosa("", 3);
+			console.log("");
+			cosa("", "asd");
+			function cosa(p_texto, prompt_number) {
+				// let prompt_number = prompt("add number");
+				console.log('prompt_number == ""' + (prompt_number == ""));
+				console.log("isNaN(prompt_number) " + isNaN(prompt_number));
+				if (
+					prompt_number != "" ||
+					(!isNaN(prompt_number) &&
+						(prompt_number < 0 || prompt_number > 99999999))
+				) {
+					// sólo números.
+					p_texto.innerHTML += "<br>number=" + prompt_number;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p id="texto"></p>
+		<button onclick="cosa(document.getElementById('texto'))">
+			pedir número
+		</button>
+		<script>
+			function pedirNumero($p_texto) {
+				prompt_number = prompt("add number");
+				if (test1(prompt_number) != false) {
+					$p_texto.innerHTML += "<br>" + prompt_number;
+				} else {
+					$p_texto.innerHTML += "<br>No es un número válido";
+				}
+			}
+
+			function test1(prompt_number) {
+				if (
+					prompt_number != "" &&
+					!isNan(prompt_number) &&
+					(prompt_number < 0 || prompt_number > 99999999)
+				) {
+					return prompt_number;
+				} else {
+					return false;
+				}
+			}
+
+			console.assert(3 + 3 == 6, "3+3=6");
+			console.assert(3 + 3 == 7, "3+3=7");
+			console.assert(test1("") == false, "");
+			console.assert(test1("a") == false, "");
+			console.assert(test1(-1) == -1, "");
+			console.assert(test1(-4) == -4, "");
+			console.assert(test1(1) == false, "");
+			console.assert(test1(99999999) == 99999999, "");
+
+			cosa(document.getElementById("texto"), "");
+			console.log;
+			cosa(document.getElementById("texto"), -1);
+			console.log;
+			cosa(document.getElementById("texto"), 1);
+			console.log;
+			cosa(document.getElementById("texto"), 999999999);
+			console.log;
+			cosa(document.getElementById("texto"), "asd");
+			console.log;
+		</script>
+	</body>
+</html>
