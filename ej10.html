@@ -6,17 +6,16 @@
 			let $texto = prompt("Introduce un texto");
 			let $texto2 = prompt("Introduce un segundo texto");
 
-			let $textoTotal = texto + "/" + $texto2;
+			let $textoTotal = $texto + "/" + $texto2;
 
-			$textoTotal = $textoTotal.toLowerCase();
-			$textoTotal = $textoTotal.replace(/\s/g, "");
-
-			document.write($textoTotal.length + "<br />");
+			$textoTotal = $textoTotal.toLowerCase().replace(/\s/g, "");
 
 			const $textoSeparado = $textoTotal.split("/");
 
 			document.write($textoSeparado[1] + "<br />");
 			document.write($textoSeparado[2] + "<br />");
+
+			document.write($textoTotal.length + "<br />");
 		</script>
 	</head>
 	<body></body>

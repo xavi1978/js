@@ -4,16 +4,43 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 6</title>
 		<script type="text/javascript">
-			var numero = prompt("Introduce un número.");
-			if (isNaN(numero)) {
-				document.write(numero + " no es un número. <br/>");
-			} else {
-				document.write(numero + " es un número. <br/>");
+			let $numero = prompt("Introduce un número.");
 
-				if ((numero < 0) | (numero > 99999999)) {
-					document.write(numero + " es menor a 0 o mayor a 99999999 <br/>");
+			function comprobar($numero, $assert) {
+				if ($numero == "") {
+					if ($assert) {
+						return false;
+					}
+					document.write("Ningún valor introducido.");
+				} else if (isNaN($numero)) {
+					if ($assert) {
+						return false;
+					}
+					document.write($numero + " no es un número. <br/>");
+				} else {
+					if ($assert) {
+						return false;
+					}
+					document.write($numero + " es un número. <br/>");
+					if (($numero < 0) | ($numero > 99999999)) {
+						if ($assert) {
+							return false;
+						}
+						document.write($numero + " es menor a 0 o mayor a 99999999. <br/>");
+					} else {
+						return true;
+					}
 				}
 			}
+
+			comprobar($numero, false);
+
+			console.assert(comprobar("", true) == false, '"" no resulta vacío.');
+			console.assert(comprobar(-1, true) == false, "-1 no resulta menor a 0.");
+			console.assert(
+				comprobar(100000000, true) == false,
+				"-10000000 no resulta mayor a 99999999."
+			);
 		</script>
 	</head>
 	<body></body>
