@@ -6,27 +6,31 @@
 		<script type="text/javascript">
 			let $numero = prompt("Introduce un número.");
 
-			function comprobar($numero, $assert) {
-				if ($numero == "") {
+			// Comprueba que el valor introducido sea un número y si está
+			// fuera de rango.
+			// '$num' valor a comprobar.
+			// '$assert' flag llamada aserción con salida rápida.
+			function comprobar($num, $assert) {
+				if ($num == "") {
 					if ($assert) {
 						return false;
 					}
 					document.write("Ningún valor introducido.");
-				} else if (isNaN($numero)) {
+				} else if (isNaN($num)) {
 					if ($assert) {
 						return false;
 					}
-					document.write($numero + " no es un número. <br/>");
+					document.write($num + " no es un número. <br/>");
 				} else {
 					if ($assert) {
 						return false;
 					}
-					document.write($numero + " es un número. <br/>");
-					if (($numero < 0) | ($numero > 99999999)) {
+					document.write($num + " es un número. <br/>");
+					if (($num < 0) | ($num > 99999999)) {
 						if ($assert) {
 							return false;
 						}
-						document.write($numero + " es menor a 0 o mayor a 99999999. <br/>");
+						document.write($num + " es menor a 0 o mayor a 99999999. <br/>");
 					} else {
 						return true;
 					}

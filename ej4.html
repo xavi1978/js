@@ -4,14 +4,47 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 4</title>
 		<script type="text/javascript">
-			let $texto = prompt("Introduce un texto");
-			if ($texto == "") {
-				document.write("Ningún valor introducido.");
-			} else if (!isNaN($texto)) {
-				document.write($texto + " es un número. <br/>");
+			// Comprueba que el valor introducido sea texto.
+			// Parámetros:
+			// '$txt' valor a comprobar.
+			// '$assert' flag llamada aserción con salida rápida.
+			function comprobar($txt, $assert) {
+				if ($txt == "") {
+					if ($assert) {
+						return false;
+					}
+					console.log("Ningún valor introducido.");
+				} else if (!isNaN($txt)) {
+					if ($assert) {
+						return false;
+					}
+					console.log($txt + " es un número. <br/>");
+				} else {
+					return true;
+				}
 			}
-			document.write($texto.toUpperCase());
+
+			// Muestra aviso introducción de texto y lo convierte
+			// a mayúscula.
+			function convertirTexto() {
+				let $texto = "";
+
+				do {
+					$texto = prompt("Introduce un texto");
+				} while (!comprobar($texto));
+
+				document.write($texto.toUpperCase());
+			}
+
+			console.assert(
+				comprobar("aaa", true) == true,
+				'"aaa" no se considera texto.'
+			);
+			console.assert(comprobar("", true) == false, '"" se considera texto.');
+			console.assert(comprobar(2, true) == false, "2 se considera texto.");
 		</script>
 	</head>
-	<body></body>
+	<body>
+		<button onclick="convertirTexto()">Introducir texto</button>
+	</body>
 </html>

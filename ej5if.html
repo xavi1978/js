@@ -5,21 +5,43 @@
 		<title>Ejercicio 5</title>
 		<script type="text/javascript">
 			let $numero = prompt("Introduce un número.");
-			if ($numero == "") {
-				document.write("Ningún valor introducido.");
-			} else if (isNaN($numero)) {
-				document.write($numero + " no es un número. <br/>");
-			} else {
-				document.write($numero + " es un número. <br/>");
 
-				if ($numero > 10) {
-					document.write($numero + " es mayor a 10. <br/>");
-				} else if ($numero < 10) {
-					document.write($numero + " es menor a 10. <br/>");
+			// Comprueba que el valor introducido sea un número y lo
+			// compara con 10.
+			// '$num' valor a comprobar.
+			// '$assert' flag llamada aserción con salida rápida.
+			function comprobar($num, $assert) {
+				if ($num == "") {
+					if ($assert) {
+						return false;
+					}
+					document.write("Ningún valor introducido.");
+				} else if (isNaN($num)) {
+					if ($assert) {
+						return false;
+					}
+					document.write($num + " no es un número. <br/>");
 				} else {
-					document.write($numero + " es igual a 10. <br/>");
+					if ($assert) {
+						return true;
+					}
+					document.write($num + " es un número. <br/>");
+
+					if ($num > 10) {
+						document.write($num + " es mayor a 10. <br/>");
+					} else if ($num < 10) {
+						document.write($num + " es menor a 10. <br/>");
+					} else {
+						document.write($num + " es igual a 10. <br/>");
+					}
 				}
 			}
+
+			comprobar($numero, false);
+
+			console.assert(comprobar("2") == true, "2 no se considera número.");
+			console.assert(comprobar("") == false, '"" se considera número.');
+			console.assert(comprobar("a") == false, "'a' se considera número.");
 		</script>
 	</head>
 	<body></body>
