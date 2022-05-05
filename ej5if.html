@@ -4,8 +4,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 5</title>
 		<script type="text/javascript">
-			let $numero = prompt("Introduce un número.");
-
 			// Comprueba que el valor introducido sea un número y lo
 			// compara con 10.
 			// '$num' valor a comprobar.
@@ -37,12 +35,17 @@
 				}
 			}
 
-			comprobar($numero, false);
+			function pedirNum() {
+				let $numero = prompt("Introduce un número.");
+				comprobar($numero, false);
+			}
 
-			console.assert(comprobar("2") == true, "2 no se considera número.");
-			console.assert(comprobar("") == false, '"" se considera número.');
-			console.assert(comprobar("a") == false, "'a' se considera número.");
+			console.assert(comprobar("2") == true, "2");
+			console.assert(comprobar("") == false, '""');
+			console.assert(comprobar("a") == false, "'a'");
 		</script>
 	</head>
-	<body></body>
+	<body>
+		<button onclick="pedirNum()">Pedir número</button>
+	</body>
 </html>

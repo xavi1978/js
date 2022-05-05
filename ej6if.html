@@ -39,12 +39,14 @@
 
 			comprobar($numero, false);
 
-			console.assert(comprobar("", true) == false, '"" no resulta vacío.');
-			console.assert(comprobar(-1, true) == false, "-1 no resulta menor a 0.");
-			console.assert(
-				comprobar(100000000, true) == false,
-				"-10000000 no resulta mayor a 99999999."
-			);
+			console.assert(comprobar("", true) == false, '""');
+			console.assert(comprobar(a, true) == false, "a");
+			console.assert(comprobar(-1, true) == false, "-1");
+			console.assert(comprobar(0, true) == true, "0");
+			console.assert(comprobar(1, true) == true, "1");
+			console.assert(comprobar(99999998, true) == true, "99999998");
+			console.assert(comprobar(99999999, true) == false, "99999999");
+			console.assert(comprobar(100000000, true) == false, "100000000");
 		</script>
 	</head>
 	<body></body>

@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Ejercicio 3</title>
-<script type="text/javascript">
-var numero = prompt("Introduce un número");
-if(isNaN(numero)){
-	document.write(numero + " is not a number <br/>");
-}else{
-	document.write(numero + " is a number <br/>");
-}
-var numero2 = prompt("Introduce un número");
-if(isNaN(numero2)){
-	document.write(numero2 + " is not a number <br/>");
-}else{
-	document.write(numero2 + " is a number <br/>");
-}
-document.write(numero + "+" + numero2 + "=" + (parseInt(numero)+parseInt(numero2)) + "<br/>");
-</script>
-</head>
-<body>
-</body>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio 3</title>
+		<script type="text/javascript">
+			// Comprueba que el valor sea un número.
+			// '$num' Valor a comprobar.
+			// '$assert' flag llamada aserción con salida rápida.
+			function comprobar($num, $assert) {
+				if ($num == "") {
+					if ($assert) {
+						return false;
+					}
+					document.write($num + "es una cadena vacía. <br/>");
+				}
+				if (isNaN($num)) {
+					if ($assert) {
+						return false;
+					}
+					document.write($num + " no es un número. <br/>");
+				} else {
+					if ($assert) {
+						return true;
+					}
+					document.write($num + " es un número. <br/>");
+				}
+			}
+
+			// Solicita la introducción de dos números, los suma y muestra
+			// la operación.
+			function sumar() {
+				let $numero = prompt("Introduce un número");
+				comprobar($numero, false);
+				let $numero2 = prompt("Introduce un número");
+				comprobar($numero2, false);
+
+				document.write(
+					$numero +
+						"+" +
+						$numero2 +
+						"=" +
+						(parseInt($numero) + parseInt($numero2)) +
+						"<br/>"
+				);
+			}
+
+			console.assert(comprobar("2", true) == true, "2");
+			console.assert(comprobar("", true) == false, '""');
+			console.assert(comprobar("a", true) == false, '"a"');
+			console.assert(2 + 3 == 5, "2 + 3");
+		</script>
+	</head>
+	<body>
+		<button onclick="sumar()">Sumar</button>
+	</body>
 </html>

@@ -4,15 +4,40 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 8</title>
 		<script type="text/javascript">
-			let $numero = prompt("Introduce un número.");
-			if (!isNaN($numero)) {
-				if ($numero % 2) {
-					document.write($numero + " es impar. <br/>");
+			// Comprueba que el valor sea un número.
+			// '$num' Valor a comprobar.
+			// '$assert' flag llamada aserción con salida rápida.
+			function comprobar($num, $assert) {
+				if ($num == "") {
+					return false;
+				}
+				if (!isNaN($num)) {
+					if ($assert) {
+						return true;
+					} else {
+						if ($num % 2) {
+							document.write($num + " es impar. <br/>");
+						} else {
+							document.write($num + " es par. <br/>");
+						}
+					}
 				} else {
-					document.write($numero + " es par. <br/>");
+					return false;
 				}
 			}
+
+			console.assert(comprobar("a", true) == false, '"a"');
+			console.assert(comprobar("", true) == false, '""');
+			console.assert(comprobar("2", true) == true, "2");
+			console.assert(comprobar("-2", true) == true, "-2");
+			console.assert(comprobar("3", true) == true, "3");
 		</script>
 	</head>
-	<body></body>
+	<body>
+		<button
+			onclick="let $numero = prompt('Introduce un número.'); comprobar($numero, false);"
+		>
+			Introducir número
+		</button>
+	</body>
 </html>

@@ -1,22 +1,54 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 10</title>
 		<script type="text/javascript">
-			let $texto = prompt("Introduce un texto");
-			let $texto2 = prompt("Introduce un segundo texto");
+			// Comprueba que el valor introducido sea un texto.
+			// '$txt' valor a comprobar.
+			function comprobar($txt) {
+				if (!isNaN($txt)) {
+					return false;
+				} else {
+					return true;
+				}
 
-			let $textoTotal = $texto + "/" + $texto2;
+				if ($txt == "") {
+					return false;
+				} else {
+					return true;
+				}
+			}
 
-			$textoTotal = $textoTotal.toLowerCase().replace(/\s/g, "");
+			// Solicita la introducción de texto y lo procesa.
+			function procesarTexto() {
+				do {
+					let $texto = prompt("Introduce un texto");
+				} while (comprobar($texto));
+				do {
+					let $texto2 = prompt("Introduce un segundo texto");
+				} while (comprobar($texto2));
 
-			const $textoSeparado = $textoTotal.split("/");
+				let $textoTotal = $texto + ";" + $texto2;
 
-			document.write($textoSeparado[1] + "<br />");
-			document.write($textoSeparado[2] + "<br />");
+				$textoTotal = $textoTotal.toLowerCase().replace(/\s/g, "");
 
-			document.write($textoTotal.length + "<br />");
+				let $textoSeparado = $textoTotal.split(";");
+
+				document.write($textoSeparado[0] + "<br />");
+				document.write($textoSeparado[1] + "<br />");
+
+				document.write($textoTotal.length + "<br />");
+			}
+
+			console.assert(comprobar("") == false, "");
+			console.assert(comprobar("aaa") == true, "aaa");
+			console.assert(comprobar("AAA") == true, "AAA");
+			console.assert(comprobar("a2a") == true, "a2a");
+			console.assert(comprobar("2") == false, "2");
 		</script>
 	</head>
-	<body></body>
+	<body>
+		<button onclick="procesarTexto()">Procesar texto</button>
+	</body>
 </html>
