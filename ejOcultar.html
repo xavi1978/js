@@ -14,10 +14,12 @@
 
 			}
             function mostrar() {
-
-                alert("hola");
                 
-                document.getElementsByClassName("control").style.visibility = "visible"
+                let $controles=document.getElementsByClassName("control")
+                
+                for (let $i=0; $i<$controles.length; $i++) {
+                    $controles[$i].style.visibility = "visible";
+                }
             }
 		</script>
 	</head>
