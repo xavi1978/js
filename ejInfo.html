@@ -5,38 +5,45 @@
 		<title>Ejercicio Info</title>
 		<script type="text/javascript" defer>
 			function tratarTexto() {
-				let palabras = document.getElementsByTagName(textarea).value.split(" ");
+				let palabras = document.getElementById("area").value.split(" ");
 				// let palabras = ["aaaa", "bbbb", "ccccc", "dddd"];
-				let ventana = window.open("", "Info", "width=200,height=100");
+				let ventana = window.open("", "Info", "width=400,height=400");
 
 				ventana.document.write(
-					'<p style="text-align:center"><b>Información sobre el texto:</b><br />' +
-						"<b>Número de palabras:</b>" +
+					'<p style="text-align:center"><b>Información sobre el texto:</b><br /><br />' +
+						"<b>Número de palabras: </b>" +
 						palabras.length +
 						"<br />" +
-						"<b>Primera palabra:</b>" +
+						"<b>Primera palabra: </b>" +
 						palabras[0] +
 						"<br />" +
-						"<b>Última palabra:</b>" +
+						"<b>Última palabra: </b>" +
 						palabras[palabras.length - 1] +
 						"<br />" +
-						"<b>Colocadas al revés:</b>" +
+						"<b>Colocadas al revés: </b>" +
 						palabras.reverse() +
 						"<br />" +
-						"<b>Ordenadas de la A a la Z:</b>" +
+						"<b>Ordenadas de la A a la Z: </b>" +
 						palabras.sort() +
 						"<br />" +
-						"<b>Ordenadas de la Z a la A:</b>" +
+						"<b>Ordenadas de la Z a la A: </b>" +
 						palabras.reverse() +
 						"</p>"
 				);
 			}
 
-			palabras = ["primeero", "segundo", "tercero", "cuarto"];
+			palabras = ["primero", "segundo", "tercero", "cuarto"];
 
 			console.assert(palabras[0] == "primero", "primero");
 			console.assert(palabras[palabras.length - 1] == "cuarto", "cuarto");
-			console.assert(palabras.reverse() == );
+			console.assert(
+				palabras.reverse() == "cuarto tercero segundo primero",
+				"cuarto, tercero, segundo, primero"
+			);
+			console.assert(
+				palabras.sort() == "cuarto primero segundo tercero",
+				"cuarto, primero, segundo, tercero"
+			);
 		</script>
 	</head>
 	<body>
