@@ -1,10 +1,16 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 9</title>
 		<script type="text/javascript">
-			function info($txt) {
-				if ($txt === $txt.toLowerCase()) {
+			// Muestra la caja tipográfica del texto.
+			function mostrarCaja($txt) {
+				if ($txt == "") {
+					return "Vacío.";
+				} else if (!isNaN($txt)) {
+					return "Es un número.";
+				} else if ($txt === $txt.toLowerCase()) {
 					return "Minúscula.";
 				} else if ($txt === $txt.toUpperCase()) {
 					return "Mayúscula.";
@@ -13,16 +19,29 @@
 				}
 			}
 
-			let $texto = prompt("Introduce un texto");
+			// Solicita introducción de texto, lo analiza y muestra
+			// su caja tipográfica.
+			function analizarTexto() {
+				let $texto = prompt("Introduce un texto");
 
-			alert("Texto introducido:" + info($texto));
-			alert(
-				"OVNI = OBJETO VOLADOR NO IDENTIFICADO " +
-					info("OVNI = OBJETO VOLADOR NO IDENTIFICADO")
-			);
-			alert(
-				"En un lugar de la mancha... " + info("En un lugar de la mancha...")
-			);
+				alert("Texto introducido: " + mostrarCaja($texto));
+				alert(
+					"OVNI = OBJETO VOLADOR NO IDENTIFICADO " +
+						mostrarCaja("OVNI = OBJETO VOLADOR NO IDENTIFICADO")
+				);
+				alert(
+					"En un lugar de la mancha... " +
+						mostrarCaja("En un lugar de la mancha...")
+				);
+			}
+			console.assert(mostrarCaja("") == "Vacío.", "");
+			console.assert(mostrarCaja(1) == "Es un número.", "1");
+			console.assert(mostrarCaja("AAA") == "Mayúscula", "AAA");
+			console.assert(mostrarCaja("aaa") == "Minúscula.", "aaa");
+			console.assert(mostrarCaja("aAa") == "Minúscula y mayúscula.", "aAa");
 		</script>
+		<body>
+			<button onclick="analizarTexto()">Analizar texto</button>
+		</body>
 	</head>
 </html>

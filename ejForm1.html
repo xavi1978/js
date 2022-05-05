@@ -4,15 +4,38 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio Form 1</title>
 		<script type="text/javascript">
-			function comprobar() {
+			// Solicita un valor y lo comprueba.
+			function introducirValor() {
+
 				let $valor = document.getElementById("numero").value
-				if (isNaN($valor) || $valor < 1 || $valor > 100) {
-					alert("Introduce un número entre 0 y 100.");
-				} else { alert("Gracias por su visita.") ; }
+				comprobar($valor, false);
 			}
+			
+			// Comprueba que valor sea un número entre 0 y 100.
+			// '$val' valor a comprobar.
+			// '$assert' flag llamada aserción con salida rápida.
+			function comprobar($val, $assert) {
+				if ($val == "" || isNaN($val) || $val < 0 || $val > 100) {
+					if ($assert) {
+						return false;
+					} else {
+						alert("Introduce un número entre 0 y 100.");
+					}
+				} else { if ($assert) {
+					return true;
+					} else {
+						alert("Gracias por su visita.");
+					}
+				}
+			}
+
+			console.assert(comprobar("", true)==false, "");
+			console.assert(comprobar(-1, true)==false, "-1");
+			console.assert(comprobar("a", true)==false, "a");
+			console.assert(comprobar(0, true)==true, "0");
 		</script>
 	</head>
 	<body>
-		<form method="get"><label for="numero">Introduce un número:</label> <input oninput="comprobar()" type="text" id="numero"></input></form>
+		<form method="get"><label for="numero">Introduce un número:</label> <input oninput="introducirValor()" type="text" id="numero"></input></form>
 	</body>
 </html>

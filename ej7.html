@@ -1,49 +1,93 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio 7</title>
 		<script type="text/javascript">
-			let $letras = [
-				"T",
-				"R",
-				"W",
-				"A",
-				"G",
-				"M",
-				"Y",
-				"F",
-				"P",
-				"D",
-				"X",
-				"B",
-				"N",
-				"J",
-				"Z",
-				"S",
-				"Q",
-				"V",
-				"H",
-				"L",
-				"C",
-				"K",
-				"E",
-				"T",
-			];
-			let $numero = prompt("Introduce un número.");
-
-			if (isNaN($numero)) {
-				document.write($numero + " no es un número. <br/>");
-			} else {
-				document.write($numero + " es un número. <br/>");
-
-				if ($numero > 0 && $numero < 99999999) {
-					document.write($numero + " es mayor a 0 y menor a 99999999. <br/>");
+			// Comprueba que valor sea un número entre 0 y 99999999.
+			// '$num' valor a comprobar.
+			// '$assert' flag llamada aserción con salida rápida.
+			function comprobarValor($num, $assert) {
+				if ($num == "") {
+					if ($assert) {
+						return false;
+					} else {
+						document.write("Introducir algún valor.");
+					}
+				}
+				if (isNaN($num)) {
+					if ($assert) {
+						return false;
+					} else {
+						document.write($num + " no es un número. <br/>");
+					}
 				} else {
-					document.write($numero + " fuera de rango 0-99999999. <br/>");
+					if ($assert) {
+						return false;
+					} else {
+						document.write($num + " es un número. <br/>");
+					}
+					if ($num > 0 && $num < 99999999) {
+						if ($assert) {
+							return true;
+						} else {
+							document.write($num + " es mayor a 0 y menor a 99999999. <br/>");
+						}
+					} else {
+						if ($assert) {
+							return false;
+						} else {
+							document.write($num + " fuera de rango 0-99999999. <br/>");
+						}
+					}
 				}
 			}
 
-			alert($letras[$numero % 23]);
+			// Solicita un número, comprueba que sea un DNI y calcula su letra.
+			function calcularLetraDNI() {
+				let $letras = [
+					"T",
+					"R",
+					"W",
+					"A",
+					"G",
+					"M",
+					"Y",
+					"F",
+					"P",
+					"D",
+					"X",
+					"B",
+					"N",
+					"J",
+					"Z",
+					"S",
+					"Q",
+					"V",
+					"H",
+					"L",
+					"C",
+					"K",
+					"E",
+					"T",
+				];
+
+				let $numero = prompt("Introduce un número.");
+
+				comprobarValor($numero, false);
+
+				alert($letras[$numero % 23]);
+			}
+
+			console.assert(comprobarValor("", true) == false, "''");
+			console.assert(comprobarValor(0, true) == false, "0");
+			console.assert(comprobarValor(-1, true) == false, "-1");
+			console.assert(comprobarValor(100000000, true) == false, "100000000");
+			console.assert(comprobarValor(1, true) == true, "1");
+			console.assert(38221010 % 23 == "R");
 		</script>
 	</head>
+	<body>
+		<button onclick="calcularLetraDNI()">Calcular letra DNI</button>
+	</body>
 </html>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -18,19 +19,23 @@
 				"Diciembre",
 			];
 
-			alert($meses[0]);
-			alert($meses[1]);
-			alert($meses[2]);
-			alert($meses[3]);
-			alert($meses[4]);
-			alert($meses[5]);
-			alert($meses[6]);
-			alert($meses[7]);
-			alert($meses[8]);
-			alert($meses[9]);
-			alert($meses[10]);
-			alert($meses[11]);
-			alert($meses[12]);
+			// Indice array de meses.
+			let $i = 0;
+
+			// Muestra los meses de 1 en 1 circularmente.
+			function mostrarMeses() {
+				alert($meses[$i]);
+				$i++;
+				if ($i == $meses.length) {
+					$i = 0;
+				}
+			}
+
+			console.assert($meses[0] == Enero, "Enero");
+			console.assert($meses[11] == Diciembre, "Diciembre");
 		</script>
 	</head>
+	<body>
+		<button onclick="mostrarMeses()">Mostrar siguiente mes</button>
+	</body>
 </html>
