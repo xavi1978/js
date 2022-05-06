@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script>
+			// Ej. 5:
+			// 1: Pide un número.
+			// 2: Comprobar que es un número.
+			// 3: if mayor a 10 o no.
+			function name1(params, param1, param2) {
+				let total, var3, var4, var5;
+				console.log(params);
+				total = new Number(param1) + parseInt(param2);
+				var1 = param1 + "+" + param2 + "=" + total;
+			}
+			alert(params);
+		</script>
+	</head>
+	<body>
+		<input type="text" id="inputId" value="algo" />
+		<button onclick="name1(document.getElementById('inputId').value)">
+			ejemplo
+		</button>
+
+		<script>
+			function nameF(params) {
+				alert(params);
+				return params;
+
+				// return prompt(params);
+			}
+
+			let cosa = nameF("ASDF");
+			alert(cosa);
+
+			var cinco = alert(prompt(""));
+			alert(cinco);
+
+			function funcionx(param1, param2) {
+				alert(param1 + param2);
+			}
+			function funcionD(param1) {
+				alert(param1);
+			}
+		</script>
+		<button onclick="alert(prompt('introduce un valor:')+prompt('text2'))">
+			prompt
+		</button>
+		<button onclick="funcionx(prompt('introduce un valor:'),prompt('text2'))">
+			prompt2
+		</button>
+		<button onclick="funcionD(prompt('introduce un valor:')+prompt('text2'))">
+			prompt3
+		</button>
+	</body>
+</html>

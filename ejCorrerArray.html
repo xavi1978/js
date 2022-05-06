@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script>
+			let posicion = 0;
+			// Primera pulsación del botón +1;
+			// para que comience en posicion 0.
+			var $primera = true;
+			const array = ["uno", "dos", "tres"];
+			const posicionesMax = array.length;
+
+			function funcioncosa(param) {
+				if (param == +1 && primera) {
+					posicion = 0;
+					$primera = false;
+				} else {
+					posicion = posicion + param;
+				}
+
+				if (posicion < 0) {
+					console.log("OUT");
+					posicion = array.length - 1;
+				}
+				if (posicion > posicionesMax - 1) {
+					console.log("OUT");
+					posicion = 0;
+				}
+
+				console.log(posicion);
+				document.getElementById("laP").innerHTML = array[posicion];
+			}
+		</script>
+	</head>
+	<body>
+		<p id="laP"></p>
+		<button onclick="funcioncosa(+1)">+1</button>
+		<button onclick="funcioncosa(-1)">-1</button>
+	</body>
+</html>

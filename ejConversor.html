@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio Conversor</title>
+		<script type="text/javascript">
+			function convertir($direccion) {
+				let $factor;
+				let $f = document.getElementById("from").value;
+				let $t = document.getElementById("to").value;
+
+				if ($f == $t) {
+					$factor = 1;
+				} else if ($f == "EUR" && $t == "PTA") {
+					$factor = 166.386;
+				} else if ($f == "PTA" && $t == "EUR") {
+					$factor = 1 / 166.386;
+				}
+
+				if ($direccion == "normal") {
+					document.getElementById("secondinput").value =
+						document.getElementById("firstinput").value * $factor;
+				}
+				if ($direccion == "inversa") {
+					document.getElementById("firstinput").value =
+						document.getElementById("secondinput").value * $factor;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<input id="firstinput" onkeyup="convertir('normal');" />
+
+			<select id="from" onchange="convertir('normal')">
+				<option value="EUR" selected>Euro(EUR)</option>
+				<option value="PTA">Peseta(PTA)</option>
+			</select>
+
+			<input id="secondinput" onkeyup="convertir('inversa')" />
+
+			<select id="to" onchange="convertir('inversa')">
+				<option value="EUR">Euro(EUR)</option>
+				<option value="PTA" selected>Peseta(PTA)</option>
+			</select>
+			<button type="reset">Limpiar</button>
+		</form>
+	</body>
+</html>

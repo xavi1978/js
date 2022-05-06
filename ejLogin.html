@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio Login</title>
+		<script type="text/javascript">
+			const $usuarios = [
+				[usuario1, pw1],
+				[usuario2, pw2],
+				[usuario3, pw3],
+			];
+
+			function comprobar($usuario, $pw) {
+				for ($i = 0; $i < $usuarios.length; $i++) {
+					if ($usuarios[$i][0] == $usuario && $usuarios[$i][1] == $pw) {
+						alert("Bienvenido al sistema");
+						return true;
+					} else {
+						continue;
+					}
+				}
+				alert("Usuario no autorizado");
+				return false;
+			}
+
+			console.assert(comprobar("usuario 1", "pw1") == true, "usuario1 pw1");
+			console.assert(
+				comprobar("usuario 1", "pwmal") == false,
+				"usuario1 pwmal"
+			);
+			console.assert(
+				comprobar("usuario mal", "pwmal") == false,
+				"usuario mal pwmal"
+			);
+			console.assert(
+				comprobar("usuario mal", "pw1") == false,
+				"usuario mal pw1"
+			);
+		</script>
+	</head>
+	<body>
+		)
+		<center>
+			<h2>Manejando el objeto password...</h2>
+			<form name="miFormulario" action="javascript:informar()">
+				Introduzca su usuario y clave...<br /><br />
+				<table cellpadding="5">
+					<tbody>
+						<tr align="RIGHT">
+							<td>usuario:</td>
+							<td>
+								<input type="text" name="usuario" id="usuario" size="15" />
+							</td>
+						</tr>
+						<tr align="RIGHT">
+							<td>clave:</td>
+							<td>
+								<input
+									type="password"
+									name="password"
+									id="password"
+									size="15"
+								/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+				<input
+					type="SUBMIT"
+					onsubmit="comprobar(document.getElementById('usuario').value, document.getElementById('password').value )"
+					name="botonEnviar"
+					value="Enviar"
+				/>
+				<input type="RESET" name="botonLimpiar" value="Limpiar" />
+			</form>
+		</center>
+	</body>
+</html>
