@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Previo examen 1305</title>
+		<script type="text/javascript">
+			let input1 = false,
+				input2 = false,
+				input3 = false,
+				input4 = false;
+			function checkbutton() {
+				if (input1 && input2 && input3 && input4) {
+					formulario.campoButton.disabled = false;
+				} else {
+					formulario.campoButton.disabled = true;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<form id="formulario">
+			<input type="text" onkeyup="aLaFuncion(this.value)" />
+			<input type="text" id="salida" />
+			<script>
+				const inputSalida = formulario.salida;
+				function aLaFuncion(texto) {
+					// console.log(texto);
+					try {
+						inputSalida.value = eval(texto);
+						input1 = true;
+						checkbutton();
+					} catch (err) {
+						inputSalida.value = "";
+						input1 = false;
+						checkbutton();
+					}
+				}
+			</script>
+			<br />
+			<br />
+			<input type="text" onkeyup="aLaFuncionNombre(this.value)" />
+			<input type="text" id="nombreYApellidos" />
+			<script>
+				function aLaFuncionNombre(texto) {
+					// .replace(/ /g, " ")
+					console.log(texto.trim().split(" ").length);
+					let totalPalabras = texto.trim().replace(/ +/g, " ").split(" ");
+					console.log(totalPalabras);
+					if (
+						totalPalabras.length == 3 &&
+						totalPalabras[0].length >= 3 &&
+						totalPalabras[1].length >= 3 &&
+						totalPalabras[2].length >= 3
+					) {
+						console.log("OK");
+						if (totalPalabras[1] != totalPalabras[2]) {
+							formulario.nombreYApellidos.style.backgroundColor = "green";
+							input2 = true;
+							checkbutton();
+						} else {
+							input2 = false;
+							checkbutton();
+							// los apellidos son iguales.
+							// formulario.nombreYApellidos.style.backgroundColor = "red";
+						}
+					} else {
+						input2 = false;
+						checkbutton();
+						// incorrecto
+						// formulario.nombreYApellidos.style.backgroundColor = "red";
+					}
+				}
+			</script>
+
+			<br />
+			<br />
+			<input type="text" onkeyup="aLaFuncionHTML(this.value)" />
+			<input type="text" id="salidaCodigo" />
+			<input type="text" id="salidaFormateada" />
+			<script>
+				function aLaFuncionHTML(texto) {
+					let textoLimpio = texto.trim();
+					let textoSalida = textoLimpio
+						.replaceAll("&lt;", "<")
+						.replaceAll("&gt;", ">")
+						.replaceAll("&quot;", '"')
+						.replaceAll("&#39;", "'")
+						.replaceAll("&#191;", "¿");
+					// console.log(textoSalida);
+					formulario.salidaCodigo.value = textoSalida;
+					// formulario.salidaFormateada.value = textoSalida;
+				}
+			</script>
+			<br />
+			<br />
+			<input type="text" id="email" onchange="comprobarProveedor(this.value)" />
+
+			<script>
+				const proveedoresEmail = ["gmail.com", "hotmail.es", "hotmail.com"];
+				function comprobarProveedor($direccion) {
+					if ($direccion == gmail.com) {
+					}
+				}
+			</script>
+			<input type="button" value="Enviar" id="campoButton" disabled />
+		</form>
+	</body>
+</html>

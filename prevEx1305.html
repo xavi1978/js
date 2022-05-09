@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Previo examen 1305</title>
+		<script type="text/javascript">
+        const inputResultado=document.getElementById("resultado");
+        function calcular($formula) {
+            // try {
+            //     inputResultado.value=eval($formula)
+            // } catch(Err) {}
+            inputResultado.value=eval(2+4);
+            console.log(eval($formula));
+        }
+        function comprobarNombre($nombre){
+            
+        }
+        
+        </script>
+
+    </head>   
+   
+    <body>
+        <button type="submit" disabled>Enviar</button>
+        <input type="text" id="formula" onkeyup="calcular(this.value)"></input>
+        <input type="text" id="resultado"></input>
+        <input type="text" id="nombreYApellidos" onchange="comprobarNombre(this.value)"></input>
+        <input type="text" id="codigoEntidad"></input>
+        <input type="text" id="codigoHTML"></input>
+        <input type="text" id="textoDescodificado"></input>
+        <input type="text" id="email"></input>
+    </body>
+</html>

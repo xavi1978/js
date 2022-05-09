@@ -5,7 +5,7 @@
 		<title>Ejercicio 9</title>
 		<script type="text/javascript">
 			// Muestra la caja tipográfica del texto.
-			function mostrarCaja($txt) {
+			function info($txt) {
 				if ($txt == "") {
 					return "Vacío.";
 				} else if (!isNaN($txt)) {
@@ -24,21 +24,20 @@
 			function analizarTexto() {
 				let $texto = prompt("Introduce un texto");
 
-				alert("Texto introducido: " + mostrarCaja($texto));
+				alert("Texto introducido: " + info($texto));
 				alert(
 					"OVNI = OBJETO VOLADOR NO IDENTIFICADO " +
-						mostrarCaja("OVNI = OBJETO VOLADOR NO IDENTIFICADO")
+						info("OVNI = OBJETO VOLADOR NO IDENTIFICADO")
 				);
 				alert(
-					"En un lugar de la mancha... " +
-						mostrarCaja("En un lugar de la mancha...")
+					"En un lugar de la mancha... " + info("En un lugar de la mancha...")
 				);
 			}
-			console.assert(mostrarCaja("") == "Vacío.", "");
-			console.assert(mostrarCaja(1) == "Es un número.", "1");
-			console.assert(mostrarCaja("AAA") == "Mayúscula", "AAA");
-			console.assert(mostrarCaja("aaa") == "Minúscula.", "aaa");
-			console.assert(mostrarCaja("aAa") == "Minúscula y mayúscula.", "aAa");
+			console.assert(info("") == "Vacío.", "");
+			console.assert(info(1) == "Es un número.", "1");
+			console.assert(info("AAA") == "Mayúscula", "AAA");
+			console.assert(info("aaa") == "Minúscula.", "aaa");
+			console.assert(info("aAa") == "Minúscula y mayúscula.", "aAa");
 		</script>
 		<body>
 			<button onclick="analizarTexto()">Analizar texto</button>

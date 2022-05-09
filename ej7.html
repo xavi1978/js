@@ -43,40 +43,40 @@
 				}
 			}
 
+			const $letrasDNI = [
+				"T",
+				"R",
+				"W",
+				"A",
+				"G",
+				"M",
+				"Y",
+				"F",
+				"P",
+				"D",
+				"X",
+				"B",
+				"N",
+				"J",
+				"Z",
+				"S",
+				"Q",
+				"V",
+				"H",
+				"L",
+				"C",
+				"K",
+				"E",
+				"T",
+			];
+
 			// Solicita un número, comprueba que sea un DNI y calcula su letra.
 			function calcularLetraDNI() {
-				let $letras = [
-					"T",
-					"R",
-					"W",
-					"A",
-					"G",
-					"M",
-					"Y",
-					"F",
-					"P",
-					"D",
-					"X",
-					"B",
-					"N",
-					"J",
-					"Z",
-					"S",
-					"Q",
-					"V",
-					"H",
-					"L",
-					"C",
-					"K",
-					"E",
-					"T",
-				];
-
 				let $numero = prompt("Introduce un número.");
 
 				comprobarValor($numero, false);
 
-				alert($letras[$numero % 23]);
+				alert($letrasDNI[$numero % 23]);
 			}
 
 			console.assert(comprobarValor("", true) == false, "''");
