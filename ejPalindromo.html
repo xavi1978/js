@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio Palíndromo</title>
+		<script>
+			// Comprueba que el texto sea un palíndromo.
+			// $texto Texto a comprobar.
+			// $assert Flag llamada aserción con salida rápida.
+
+			function comprobarPalindromo($texto, $assert) {
+				let $textoTotal = $texto
+					.replace(/ /g, "")
+					.toLowerCase()
+					.replace(/á/g, "a")
+					.replace(/é/g, "e")
+					.replace(/í/g, "i")
+					.replace(/ó/g, "o")
+					.replace(/ú/g, "u");
+				if (
+					$textoTotal.slice(0, $textoTotal.length / 2) ==
+					$textoTotal
+						.slice($textoTotal.length / 2 + 1, $textoTotal.length)
+						.split("")
+						.reverse()
+						.join("")
+				) {
+					if ($assert) {
+						return true;
+					} else {
+						alert("Es un palíndromo.");
+					}
+				} else {
+					if ($assert) {
+						return false;
+					} else {
+						alert("No es un palíndromo.");
+					}
+				}
+			}
+
+			console.assert(
+				comprobarPalindromo("La ruta nos aportó otro paso natural", true) ==
+					true,
+				"La ruta nos aporto otro paso natural"
+			);
+			console.assert(
+				comprobarPalindromo("Esto no es un palindromo", true) == false,
+				"Esto no es un palindromo"
+			);
+		</script>
+	</head>
+	<body>
+		<button onclick="comprobarPalindromo(prompt('Introducir texto'), false)">
+			Comprobar palíndromo
+		</button>
+	</body>
+</html>

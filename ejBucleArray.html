@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio Bucle Array</title>
+		<script>
+			let $array = [
+				1,
+				2,
+				3,
+				4,
+				["uno", "dos", "tres", "cuatro"],
+				["cinco", "seis", "siete", "ocho"],
+			];
+			for ($i = 0; $i < $array.length; $i++) {
+				if ($array[$i].length === undefined) {
+					alert($array[$i]);
+				} else if ($array[$i].length > 1) {
+					for ($j = 0; $j < $array[$i].length; $j++) {
+						alert($array[$i][$j]);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

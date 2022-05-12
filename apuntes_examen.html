@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script defer src="./carousel.js"></script>
+
+		<script>
+			const arrayFotos = ["imagen1.jpeg", "imagen2.jfif", "img.png"];
+			const posicionesArray = arrayFotos.length;
+			const imagen = document.getElementById("imagen");
+			let posicion = 0;
+			function contar(number) {
+				if (number != 0) {
+					posicion = posicion + number;
+					if (posicion > posicionesArray) {
+						posicion = 0;
+					}
+					if (posicion < 0) {
+						posicion = posicionesArray;
+					}
+				} else {
+					posicion = 0;
+				}
+				// let imagen = document.getElementById("imagen");
+				imagen.src = "./" + arrayFotos[posicion];
+				imagen.alt = arrayFotos[posicion].split(".")[0];
+				//$(selector).prop(property)
+				//img.XXX
+			}
+		</script>
+	</head>
+
+	<body>
+		<img id="imagen" src="./imagen1.jpeg" alt="" title="" />
+		<button onclick="contar(+1)">Next</button>
+		<button onclick="contar(-1)">Back</button>
+		<button onclick="contar(0)">Start Over</button>
+
+		<form method="GET">
+			<input type="text" />
+			<p id="nombreError">Error</p>
+			<input type="submit" value="Enviar" disabled />
+		</form>
+		<script>
+			let nombre = document.getElementById("name").value;
+			let contarNombre = nombre.trim().replace(/  +/g, " ").length;
+			if (contarNombre > 2) {
+				//quitar clase incorrecto
+				//add clase correcto
+				//esteCampo.style.background
+				//document.getElementById("nombreError").innerHTML="";
+			} else {
+				//quitar clase correcto
+				//añadir clase incorrecto
+			}
+		</script>
+	</body>
+</html>
