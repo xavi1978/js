@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio tabla de multiplicar</title>
+		<script>
+			// Muestra la tabla de multiplicar del número solicitado.
+			function mostrarTabla() {
+				let $numero;
+				do {
+					$numero = prompt("Introduzca un número");
+				} while (isNaN($numero));
+				document.write("<style> * {text-align: center}</style>");
+				document.write(
+					"<h3>Tabla de multiplicar del " + $numero + "</h3><br />"
+				);
+				for ($i = 1; $i <= 10; $i++) {
+					document.write(
+						$numero + " * " + $i + " = " + eval($i * $numero) + "<br />"
+					);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="mostrarTabla()">Tabla de multiplicar</button>
+	</body>
+</html>
