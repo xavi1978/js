@@ -80,6 +80,32 @@
 
 `trim()` limpia espacios a principio y final.
 
+### Array
+
+`concat()` concatena una o dos arrays.
+
+`delete` elimina un elemento.
+
+`join()` Une los elementos con un carácter.
+
+`length()` devuelve longitud.
+
+`pop()` elimina última posicion.
+
+`push()` añade última posición.
+
+`reverse()` invierte.
+
+`shift()` añade primera posición.
+
+`sort()` ordena alfanuméricamente por Unicode.
+
+`splice(2,0,"a","b")` añade elementos en posicion dada.
+
+`toString()` Convierte en cadena.
+
+`unshift()` elimina primera posición.
+
 ### Salidas de typeof()
 
 string, number, undefined, Nan, boolean, Infinity, matrices[], objetos{}

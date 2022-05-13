@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			//BOTÓN 1: crear cookie
+			//      seleccionar durante cuanto tiempo existirá (1 dia, 2...)
+			//      seleccionar una fecha
+			//BOTÓN 2: comprobar si existe
+			//BOTÓN 3: leer contenido
+			//modificar la cookie
+			//borrar cookie
+			function setCookie(cname, cvalue, exdays) {
+				const d = new Date();
+				d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+				let expires = "expires=" + d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			}
+
+			function getCookie(cname) {
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(";");
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == " ") {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+
+			function checkCookie() {
+				let user = getCookie("username");
+				if (user != "") {
+					alert("Welcome again " + user);
+				} else {
+					user = prompt("Please enter your name:", "");
+					if (user != "" && user != null) {
+						setCookie("username", user, 30);
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body onload="">
+		<button onclick="checkCookie()"></button>
+		<br />
+		<br />
+		<br />
+		<button
+			onclick="document.getElementById('preg1').style.visibility='visible'"
+		>
+			Create cookie
+		</button>
+		<div id="preg1" style="visibility: hidden; background-color: brown">
+			<button>Seleccionar una fecha</button>
+			<button>Seleccionar cantidad de días</button>
+		</div>
+	</body>
+</html>

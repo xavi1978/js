@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Apuntes 7 array</title>
+	</head>
+	<body>
+		<p id="demo1"></p>
+		<p id="demo2"></p>
+		<p id="demo3"></p>
+		<p id="demo4"></p>
+		<p id="demo5"></p>
+		<p id="demo6"></p>
+		<p id="demo7"></p>
+		<p id="demo8"></p>
+		<p id="demo9"></p>
+		<p id="demo10"></p>
+		<p id="demo11"></p>
+		<p id="demo12"></p>
+		<p id="demo13"></p>
+		<p id="demo14"></p>
+		<p id="demo15"></p>
+		<p id="demo16"></p>
+		<p id="demo17"></p>
+		<p id="demo18"></p>
+		<script>
+			const fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo1").innerHTML = fruits.toString();
+			document.getElementById("demo2").innerHTML = fruits.join(" * ");
+			fruits.pop();
+			document.getElementById("demo3").innerHTML = fruits.join(" - ");
+			fruits.push("kiwi");
+			document.getElementById("demo4").innerHTML = fruits.join(" - ");
+			fruits.shift();
+			document.getElementById("demo5").innerHTML = fruits.join(" - ");
+			fruits.unshift("Lemon");
+			document.getElementById("demo6").innerHTML = fruits.join(" - ");
+			fruits[fruits.length] = "Apple";
+			document.getElementById("demo7").innerHTML = fruits.join(" - ");
+			delete fruits[0];
+			document.getElementById("demo8").innerHTML = fruits.join(" - ");
+
+			const letras = ["B", "C", "D", "AB", "AA"];
+			document.getElementById("demo9").innerHTML = letras.toString();
+			letras.sort();
+			document.getElementById("demo10").innerHTML = letras.toString();
+			letras.reverse();
+			document.getElementById("demo11").innerHTML = letras.toString();
+
+			const numeros = [4, 3, 5, 1, 2, 10, 10.5];
+			document.getElementById("demo12").innerHTML = numeros.toString();
+			numeros.sort();
+			document.getElementById("demo13").innerHTML = numeros.toString();
+			numeros.reverse();
+			document.getElementById("demo14").innerHTML = numeros.toString();
+			numeros.sort(function (a, b) {
+				return a - b;
+			});
+			document.getElementById("demo18").innerHTML = numeros.toString();
+
+			// const numerosYletras = [
+			// 	"B",
+			// 	"C",
+			// 	"D",
+			// 	"AB",
+			// 	"AA",
+			// 	4,
+			// 	3,
+			// 	5,
+			// 	1,
+			// 	2,
+			// 	10,
+			// 	"b",
+			// 	"c",
+			// 	"d",
+			// 	"ab",
+			// 	"aa",
+			// ];
+			// document.getElementById("demo15").innerHTML = numerosYletras.toString();
+			// numerosYletras.sort();
+			// document.getElementById("demo16").innerHTML = numerosYletras.toString();
+			// numerosYletras.reverse();
+			// document.getElementById("demo17").innerHTML = numerosYletras.toString();
+		</script>
+	</body>
+</html>

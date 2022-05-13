@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p id="demo1"></p>
+		<script>
+			const numeros = [4, 3, 5, 1, 2, 11, 10, 10.5];
+			let numerosOrdenados = ordenarNumeros(numeros);
+			//document.getElementById("demo1").innerHTML = numerosOrdenados.toString();
+
+			function ordenarNumeros(lista) {
+				let copiaLista = [].concat(lista);
+				let arrayDev = []; //return
+
+				while (copiaLista.length > 1) {
+					let temporal = lista[0];
+
+					for (let i = 0; i < copiaLista.length; i++) {
+						if (temporal > copiaLista[i]) {
+							temporal = copiaLista[i];
+						}
+					}
+					console.log(temporal);
+					arrayDev.push(temporal);
+					console.log(arrayDev);
+					let salidaIndexOf = copiaLista.indexOf(temporal);
+					console.log(salidaIndexOf);
+
+					if (salidaIndexOf > 0) {
+						copiaLista.splice(salidaIndexOf, 1);
+					} else {
+						copiaLista.shift();
+					}
+					console.log(copiaLista);
+					console.log("");
+					debugger;
+				}
+				//comparatorNumber(a,b)
+				//return arrayDev;
+			}
+			// function comparatorNumber(a, b) {
+			//  return a - b;
+			// }
+		</script>
+	</body>
+</html>
