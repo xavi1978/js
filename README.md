@@ -265,6 +265,17 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
+### Switch case
+
+```
+switch (key) {
+
+  case value: break;
+  case value: break;
+  default: break;
+}
+```
+
 ### Eventos
 
 `onclick`
@@ -278,3 +289,35 @@ for (let i = 0; i < 5; i++) {
 `onmousedown`
 
 `onmouseover`
+
+### Función test password
+
+```
+const mayuscula = /[A-Z]/;
+const minuscula = /[a-z]/;
+const numero = /[0-9]/;
+const caracter = /[!@#\$%\^\&*\)\(+=._-]/;
+letras("Aa0@");
+function letras(texto) {
+    let var1 = false;
+    let var2 = false;
+    let var3 = false;
+    let var4 = false;
+    if (mayuscula.test(texto)) {
+        console.log("mayusucula");
+    }
+    if (minuscula.test(texto)) {
+        console.log("minuscula");
+    }
+    if (numero.test(texto)) {
+        console.log("numero");
+    }
+    if (caracter.test(texto)) {
+        console.log("caracter");
+    }
+    if (var1 && var2 && var3 && var4) {
+        return true;
+    }
+    return false;
+}
+```
