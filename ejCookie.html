@@ -7,8 +7,8 @@
 			//      seleccionar una fecha
 			//BOTÓN 2: comprobar si existe
 			//BOTÓN 3: leer contenido
-			//modificar la cookie
-			//borrar cookie
+			//BOTÓN 4: modificar la cookie
+			//BOTÓN 5: borrar cookie
 			function setCookie(cname, cvalue, exdays) {
 				const d = new Date();
 				d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -47,7 +47,7 @@
 	</head>
 
 	<body onload="">
-		<button onclick="checkCookie()"></button>
+		<button onclick="checkCookie()">Check cookie</button>
 		<br />
 		<br />
 		<br />
@@ -58,7 +58,9 @@
 		</button>
 		<div id="preg1" style="visibility: hidden; background-color: brown">
 			<button>Seleccionar una fecha</button>
+			<input type="date" id="fecha" onchange="let $fecha=this.value" ></input>
 			<button>Seleccionar cantidad de días</button>
+			<input type="number" id="dias" onchange="let $dias=this.value" ></input>
 		</div>
 	</body>
 </html>

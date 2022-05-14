@@ -2,38 +2,20 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Ejercicio Formulario Select</title>
-		<script type="text/javascript">
-            añadir() {
-                let opciones = document.getElementById("opciones");
-                let opcion = document.createElement("option");
-                opcion.text = document.getElementById("texto").value;
-                opciones.add(opcion);
-            }
-            modificar() {
-                let opciones = document.getElementById("opciones");
-                let opcion = document.createElement("option");
-                opcion.text = document.getElementById("texto").value;
-                opciones
-            }
-            borrar() {
-                let opciones = document.getElementById("opciones");
-                let opcion = document.createElement("option");
-                    opciones.remove()
-            }
+		<script type="text/javascript"></script>
         
-        </script>
+        
 	</head>
-	<input>
-			<button onclick="añadir()" type="text">Añadir</button>
-            <button onclick="modificar()" type="text">Modificar</button>
-            <button onclick="borrar()" type="text">Borrar</button>
-            <input id="texto" type="text"></input>
-            <label for="opciones">Opciones:</label>
-			<select onselect="boton('añadir')" name="opciones" id="opciones">
-				<option value="opcion1">Opción 1</option>
-				<option value="opcion2">Opción 2</option>
-				<option value="opcion3">Opción 3</option>
-			</select>
-		</form>
+	<body>
+    <form>
+        <label for="opciones">Opciones:</label>
+        <select id="opciones">
+			<option>Opción 1</option>
+			<option>Opción 2</option>
+			<option>Opción 3</option>
+		</select>
+        <br />
+        <button onclick="myFunction()">Borrar opcion seleccionada</button>
+	</form>
 	</body>
 </html>

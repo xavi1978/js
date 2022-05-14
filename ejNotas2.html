@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ejercicio notas 1</title>
+		<title>Ejercicio notas 2</title>
 		<script>
 			function mostrarNota() {
 				let $numero;
@@ -21,31 +21,15 @@
 			}
 
 			function evaluarNota($nota) {
-				switch ($nota) {
-					case "0":
-					case "1":
-					case "2":
-					case "3":
-					case "4":
-						return "Suspenso";
-					case "5":
-					case "6":
-						return "Aprobado";
-					case "7":
-					case "8":
-						return "Notable";
-					case "9":
-					case "10":
-						return "Sobresaliente";
-					default:
-						break;
-				}
+				let $resultado;
+
+				$resultado = $nota < 5 ? "Suspenso" : "Aprobado";
+
+				return $resultado;
 			}
 
 			console.assert(evaluarNota(0) == "Suspenso", "0 == Suspenso");
 			console.assert(evaluarNota(5) == "Aprobado", "5 == Aprobado");
-			console.assert(evaluarNota(7) == "Notable", "7 == Notable");
-			console.assert(evaluarNota(9) == "Sobresaliente", "9 == Sobresaliente");
 		</script>
 	</head>
 	<body>
