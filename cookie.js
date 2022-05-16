@@ -18,6 +18,12 @@ function funcion5() {
 		document.getElementById("valueCookie"),
 		document.getElementById("anos").value * 365
 	);
+	console.log(document.getElementById("anos").value);
+	console.log(
+		document.getElementById("anos").value * 365 +
+			document.getElementById("mes").value * 30 +
+			document.getElementById("dias").value
+	);
 }
 select = document.getElementById("selector");
 listCookies();

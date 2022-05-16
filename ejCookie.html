@@ -44,6 +44,7 @@
 				}
 			}
 		</script>
+		<script defer src="./cookie.js"></script>
 	</head>
 
 	<body onload="">
@@ -51,24 +52,21 @@
 		<br />
 		<br />
 		<br />
-		<button
-			onclick="document.getElementById('preg1').style.visibility='visible'"
-		>
-			Create cookie
-		</button>
+		<button id="botonCrear">Create cookie</button>
 		<div id="preg1" style="visibility: hidden; background-color: brown">
-			<button onclick="document.getElementById('fecha').style.visibility='visible'">Seleccionar una fecha: </button>
-			<input type="date" id="fecha" style="visibility: hidden" onchange="let $fecha=this.value" ></input>
-			<button onclick="document.getElementById('dias').style.visibility='visible'">Seleccionar cantidad de días: </button>
-			<input type="number" id="dias" style="visibility: hidden" onchange="let $dias=this.value" ></input>
+			<div class="center">
+				<input type="text" id="nameCookie" placeholder="nameCookie" />
+				<input type="text" id="valueCookie" placeholder="valueCookie" />
+			</div>
+			<button id="createCookie2">crear cookie</button>
 		</div>
-		<input id="cantidad" style="visibility:hidden">
-		<input type="text" id="dias"></input></div>
-		<input type="text" id="meses"></input></div>
-		<input type="text" id="anyos"></input></div>
-
-		</div>
-		<button onclick="document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';">Delete cookie</button>
+		<br />
+		<br />
+		<button
+			onclick="document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';"
+		>
+			Delete cookie
+		</button>
 		<select id="selector" name="" id=""></select>
 	</body>
 </html>
