@@ -16,7 +16,7 @@
 		</form>
 		<br />
 
-		<input type="text" id="opcion" placeholder="Opción a añadir" />
+		<input type="text" id="adicion" placeholder="Opción a añadir" />
 		<button onclick="insertar()">Añadir opción</button>
 		<br />
 		<br />
@@ -27,12 +27,20 @@
 		<button onclick="borrar()">Borrar opción seleccionada</button>
 		<script>
 			function insertar() {
-				var x = document.getElementById("opciones");
-				var option = document.createElement("option");
-				option.text = document.getElementById("opcion").value;
-				x.add(option);
+				if (document.getElementById("adicion").value != "") {
+					var x = document.getElementById("opciones");
+					var option = document.createElement("option");
+					option.text = document.getElementById("adicion").value;
+					x.add(option);
+				} else {
+					return false;
+				}
 			}
-			function modificar() {}
+			function modificar() {
+				var x = document.getElementById("opciones");
+				x.selectedOptions[0].innerHTML =
+					document.getElementById("sustituto").value;
+			}
 			function borrar() {
 				var x = document.getElementById("opciones");
 				x.remove(x.selectedIndex);
