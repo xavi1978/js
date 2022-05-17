@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			console.table(["objeto1", "objeto2", "objeto3"]);
+			console.table(document.cookie.split(";").map((s) => s.trim().split("=")));
+
+			let car1 = { name: "Honda", modelo: "civic" };
+			let car2 = { name: "Seat", modelo: "ibiza" };
+			console.table([car1, car2]);
+		</script>
+	</body>
+</html>

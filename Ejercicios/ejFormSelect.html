@@ -1,21 +1,42 @@
-<input>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ejercicio Formulario Select</title>
-		<script type="text/javascript"></script>
-        
-        
 	</head>
 	<body>
-    <form>
-        <label for="opciones">Opciones:</label>
-        <select id="opciones">
-			<option>Opción 1</option>
-			<option>Opción 2</option>
-			<option>Opción 3</option>
-		</select>
-        <br />
-        <button onclick="myFunction()">Borrar opcion seleccionada</button>
-	</form>
+		<form>
+			<select id="opciones" size="5">
+				<option>Opción 1</option>
+				<option>Opción 2</option>
+				<option>Opción 3</option>
+			</select>
+		</form>
+		<br />
+
+		<input type="text" id="opcion" placeholder="Opción a añadir" />
+		<button onclick="insertar()">Añadir opción</button>
+		<br />
+		<br />
+		<input type="text" id="sustituto" placeholder="Opción sustituta" />
+		<button onclick="modificar()">Modificar opción seleccionada</button>
+		<br />
+		<br />
+		<button onclick="borrar()">Borrar opción seleccionada</button>
+		<script>
+			function insertar() {
+				var x = document.getElementById("opciones");
+				var option = document.createElement("option");
+				option.text = document.getElementById("opcion").value;
+				x.add(option);
+			}
+			function modificar() {}
+			function borrar() {
+				var x = document.getElementById("opciones");
+				x.remove(x.selectedIndex);
+			}
+		</script>
 	</body>
 </html>
