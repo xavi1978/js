@@ -28,7 +28,7 @@
 				const d = new Date();
 				d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
 				let expires = "expires=" + d.toUTCString();
-				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+				document.cookie = encodeURIComponent(cname) + "=" + encodeURIComponent(cvalue) + ";" + expires + ";path=/";			
 			}
 
 			function getCookie(cname) {
@@ -89,7 +89,6 @@
 	<body
 		onload="document.getElementById('nameUser').innerHTML=getCookie('nameUser')"
 	>
-		<button onclick="checkCookie()">Check cookie</button>
 		<br />
 		<br />
 		<br />
@@ -101,9 +100,9 @@
 					<input type="text" id="valueCookie" placeholder="valueCookie" />
 				</div>
 				<button id="createCookie2">crear cookie</button>
-				<button id="botonSelFecha">Seleccionar fecha</button>
+				<button id="botonSelFecha">Seleccionar una fecha</button>
 				<input type="date" id="fecha" />
-				<button id="botonSelDias">Seleccionar dias</button>
+				<button id="botonSelDias">Seleccionar cantidad de dias</button>
 				<input type="number" id="cantidad" />
 			</div>
 			<div id="fecha" style="visibility: hidden">
@@ -117,16 +116,9 @@
 				<input type="text" id="anos" placeholder="años" />
 				<button id="createCookie2">crear cookie</button>
 			</div>
-			<button onclick="alert(getCookie(prompt('Nombre de la cookie')))">
-				Check Cookie
-			</button>
+		</div>
 			<br />
 			<br />
-			<button
-				onclick="document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';"
-			>
-				Delete cookie
-			</button>
 			<div class="otros">
 				<select id="selector" name="" id=""></select>
 				<br />
@@ -141,9 +133,17 @@
 				<button id="borrar">Eliminar cookie</button>
 				<input type="date" id="elDate" />
 				<button
-					onclick="console.log(new Date(document.getElementById('elDate')))"
+					onclick="funcion9()">AAA</button>
 				></button>
 			</div>
-		</div>
+		
+		<script>
+			function funcion9() {
+				let campo=document.getElementById("elDate").value;
+				let resto=new Date(campo) - new Date();
+				let dias=resto/1000/60/60/24;
+				console.log(Math.ceil(dias));
+			}
+		</script>
 	</body>
 </html>

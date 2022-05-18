@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio Array Base</title>
+		<script>
+			let $valores = [true, 5, false, "hola", "adios", 2];
+			if ($valores[3] > $valores[4]) {
+				document.write('"hola" es mayor a "adios".');
+			} else if ($valores[4] > $valores[3]) {
+				document.write('"adios" es mayor a "hola".');
+			} else {
+				document.write('"hola" es igual a "adios".');
+			}
+
+			let $suma = eval($valores[1] + $valores[5]);
+			let $resta = eval($valores[1] - $valores[5]);
+			let $division = eval($valores[1] / $valores[5]);
+			let $producto = eval($valores[1] * $valores[5]);
+			let $modulo = eval($valores[1] % $valores[5]);
+
+			document.write("<br />");
+			document.write($suma);
+			document.write("<br />");
+			document.write($resta);
+			document.write("<br />");
+			document.write($division);
+			document.write("<br />");
+			document.write($producto);
+			document.write("<br />");
+			document.write($modulo);
+		</script>
+	</head>
+	<body></body>
+</html>
