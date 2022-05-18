@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<style>
+			.crear {
+				margin: 20px;
+				padding: 10px;
+				background-color: #848484;
+			}
+			.otros {
+				margin: 20px;
+				padding: 10px;
+				background-color: #b01616;
+			}
+			.center {
+				text-align: center;
+			}
+		</style>
 		<script>
 			//BOTÓN 1: crear cookie
 			//      seleccionar durante cuanto tiempo existirá (1 dia, 2...)
@@ -43,34 +58,92 @@
 					}
 				}
 			}
+			function miFuncionCookie(cname) {
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				console.log(decodedCookie);
+				console.log(document.cookie);
+				let ca = decodedCookie.split(";");
+				console.log(decodedCookie);
+				console.log(ca);
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i].trim();
+					// console.log(c);
+					// while (c.charAt(0) == " ") {
+					// 	c = c.substring(1);
+					// }
+					// console.log("XX" + c);
+					// console.log("name-" + name);
+					// console.log(c.indexOf(name));
+					if (c.indexOf(name) == 0) {
+						return "Existe la cookie: " + c;
+					}
+					return "No existe";
+				}
+				return "";
+			}
 		</script>
 		<script defer src="./ejCookie.js"></script>
 	</head>
 
-	<body onload="">
+	<body
+		onload="document.getElementById('nameUser').innerHTML=getCookie('nameUser')"
+	>
 		<button onclick="checkCookie()">Check cookie</button>
 		<br />
 		<br />
 		<br />
-		<button id="botonCrear">Create cookie</button>
-		<div id="preg1" style="visibility: hidden; background-color: brown">
-			<div class="center">
-				<input type="text" id="nameCookie" placeholder="nameCookie" />
-				<input type="text" id="valueCookie" placeholder="valueCookie" />
+		<div class="crear">
+			<button id="botonCrear">Create cookie</button>
+			<div id="preg1" style="visibility: hidden; background-color: brown">
+				<div class="center">
+					<input type="text" id="nameCookie" placeholder="nameCookie" />
+					<input type="text" id="valueCookie" placeholder="valueCookie" />
+				</div>
+				<button id="createCookie2">crear cookie</button>
+				<button id="botonSelFecha">Seleccionar fecha</button>
+				<input type="date" id="fecha" />
+				<button id="botonSelDias">Seleccionar dias</button>
+				<input type="number" id="cantidad" />
 			</div>
-			<button id="createCookie2">crear cookie</button>
-			<button id="botonSelFecha">Seleccionar fecha</button>
-			<input type="date" id="fecha" />
-			<button id="botonSelDias">Seleccionar dias</button>
-			<input type="number" id="cantidad" />
+			<div id="fecha" style="visibility: hidden">
+				<input id="inputDate" type="date" />
+				<button id="createCookie1">crear cookie</button>
+			</div>
+
+			<div id="cantidad" style="visibility: hidden">
+				<input type="text" id="dias" placeholder="dia" />
+				<input type="text" id="mes" placeholder="mes" />
+				<input type="text" id="anos" placeholder="años" />
+				<button id="createCookie2">crear cookie</button>
+			</div>
+			<button onclick="alert(getCookie(prompt('Nombre de la cookie')))">
+				Check Cookie
+			</button>
+			<br />
+			<br />
+			<button
+				onclick="document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';"
+			>
+				Delete cookie
+			</button>
+			<div class="otros">
+				<select id="selector" name="" id=""></select>
+				<br />
+				<button onclick="alert(miFuncionCookie(prompt('Nombre de la cookie')))">
+					CheckCookie
+				</button>
+				<br />
+				<button id="leerContenido">Leer contenido</button>
+				<br />
+				<button id="modificar">modificar cookie</button>
+				<br />
+				<button id="borrar">Eliminar cookie</button>
+				<input type="date" id="elDate" />
+				<button
+					onclick="console.log(new Date(document.getElementById('elDate')))"
+				></button>
+			</div>
 		</div>
-		<br />
-		<br />
-		<button
-			onclick="document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';"
-		>
-			Delete cookie
-		</button>
-		<select id="selector" name=""></select>
 	</body>
 </html>

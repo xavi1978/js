@@ -14,6 +14,27 @@
 			let car1 = { name: "Honda", modelo: "civic" };
 			let car2 = { name: "Seat", modelo: "ibiza" };
 			console.table([car1, car2]);
+			let array = [car1, car2];
+
+			for (let i = 0; i < array.length; i++) {
+				console.log(array[i]);
+			}
+
+			console.table(array);
+
+			console.time("for loop");
+			for (let i = 0; i < 1000000; i++) {
+				// some code
+			}
+
+			console.timeEnd("for loop");
+
+			console.time("while loop");
+			let a = 0;
+			while (a < 1000000) {
+				a++;
+			}
+			console.timeEnd("while loop");
 		</script>
 	</body>
 </html>

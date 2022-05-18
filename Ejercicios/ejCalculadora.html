@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form id="Calc">
+			<table style:border="4">
+				<tr>
+					<td>
+						<input type="text" id="Input" size="16" />
+						<br />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input
+							type="button"
+							id="uno"
+							value="  1  "
+							onclick="tomarValor(document.getElementById('uno').value)"
+						/>
+						<input
+							type="button"
+							id="dos"
+							value="  2  "
+							onclick="tomarValor(document.getElementById('dos').value)"
+						/>
+						<input
+							type="button"
+							id="tres"
+							value="  3  "
+							onclick="tomarValor(document.getElementById('tres').value)"
+						/>
+						<input
+							type="button"
+							id="mas"
+							value="  +  "
+							onclick="tomarValor(document.getElementById('mas').value)"
+						/>
+						<br />
+						<input
+							type="button"
+							id="cuatro"
+							value="  4  "
+							onclick="tomarValor(document.getElementById('cuatro').value)"
+						/>
+						<input
+							type="button"
+							id="cinco"
+							value="  5  "
+							onclick="tomarValor(document.getElementById('cinco').value)"
+						/>
+						<input
+							type="button"
+							id="seis"
+							value="  6  "
+							onclick="tomarValor(document.getElementById('seis').value)"
+						/>
+						<input
+							type="button"
+							id="menos"
+							value="   -  "
+							onclick="tomarValor(document.getElementById('menos').value)"
+						/>
+						<br />
+						<input
+							type="button"
+							id="siete"
+							value=" 7 "
+							onclick="tomarValor(document.getElementById('siete').value)"
+						/>
+						<input
+							type="button"
+							id="ocho"
+							value=" 8 "
+							onclick="tomarValor(document.getElementById('ocho').value)"
+						/>
+						<input
+							type="button"
+							id="nueve"
+							value="  9  "
+							onclick="tomarValor(document.getElementById('nueve').value)"
+						/>
+						<input
+							type="button"
+							id="por"
+							value="  *  "
+							onclick="tomarValor(document.getElementById('por').value)"
+						/>
+						<br />
+						<input type="button" id="clear" value="  c  " onclick="limpiar()" />
+						<input
+							type="button"
+							id="cero"
+							value="  0  "
+							onclick="tomarValor(document.getElementById('cero').value)"
+						/>
+						<input
+							type="button"
+							id="enter"
+							value="  =  "
+							onclick="calcular()"
+						/>
+						<input
+							type="button"
+							id="div"
+							value="  /   "
+							onclick="tomarValor(document.getElementById('div').value)"
+						/>
+						<br />
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			function tomarValor($valor) {
+				document.getElementById("Input").value += $valor;
+			}
+
+			function limpiar() {
+				document.getElementById("Input").value = "";
+			}
+
+			function calcular() {
+				let $resultado = eval(
+					document.getElementById("Input").value.replace(/\s/g, "")
+				);
+				document.getElementById("Input").value = $resultado;
+			}
+		</script>
+	</body>
+</html>

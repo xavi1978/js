@@ -13,7 +13,7 @@
 				const d = new Date();
 				d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
 				let expires = "expires=" + d.toUTCString();
-				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+				document.cookie = encodeURIComponent(cname) + "=" + encodeURIComponent(cvalue) + ";" + expires + ";path=/";
 			}
 
 			function getCookie(cname) {
@@ -43,6 +43,30 @@
 					}
 				}
 			}
+			function miFuncionCookie(cname) {
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				console.log(decodedCookie);
+				console.log(document.cookie);
+				let ca = decodedCookie.split(";");
+				console.log(decodedCookie);
+				console.log(ca);
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i].trim();
+					// console.log(c);
+					// while (c.charAt(0) == " ") {
+					// 	c = c.substring(1);
+					// }
+					// console.log("XX" + c);
+					// console.log("name-" + name);
+					// console.log(c.indexOf(name));
+					if (c.indexOf(name) == 0) {
+						return "Existe la cookie: "+ c;
+					} return "No existe";
+				}
+				return "";
+			}
+
 		</script>
 	</head>
 
@@ -65,10 +89,15 @@
 		<input id="cantidad" style="visibility:hidden">
 		<input type="text" id="dias"></input></div>
 		<input type="text" id="meses"></input></div>
-		<input type="text" id="anyos"></input></div>
+		<input type="text" id="anos"></input></div>
 
 		</div>
 		<button onclick="document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';">Delete cookie</button>
 		<select id="selector" name="" id=""></select>
+	
+		<div class="otros">
+			<
+		</div>
+
 	</body>
 </html>
