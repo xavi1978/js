@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p id="demo"></p>
+
+		<script>
+			function generateRandomInt(min, max) {
+				x = Math.floor(Math.random() * (max - min) + min);
+				document.getElementById("demo").innerHTML = x;
+			}
+			generateRandomInt(200, 900);
+
+			//////
+
+			let x = Math.random().toString(36).substr(2, 6);
+			document.getElementById("demo").innerHTML = X;
+
+			//////
+
+			var characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+			var result = "";
+
+			var charactersLength = characters.length;
+
+			for (var i = 0; i < 5; i++) {
+				result += characters.charAt(
+					Math.floor(Math.random() * charactersLength)
+				);
+			}
+
+			document.getElementById("demo").innerHTML = result;
+
+			//////
+
+			let characters =
+				"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+			let result = "";
+
+			let length = 10; // Customize the length here.
+
+			for (let i = length; i > 0; --i)
+				result +=
+					characters[Math.round(Math.random() * (characters.length - 1))];
+
+			console.log(result);
+		</script>
+	</body>
+</html>

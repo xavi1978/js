@@ -14,11 +14,17 @@
 
 `console.assert(expresion, mensaje)` mostrar mensaje consola si expresión es falso.
 
+`console.count()` cuenta las veces que se pasa por él.
+
 `console.error()` mostrar error consola.
 
 `console.info()` mostrar mensaje consola.
 
 `console.log()` mostrar mensaje consola.
+
+`console.table()` mostrar tabla consola.
+
+`console.trace()` trazar como se ha llegado a tal punto.
 
 `console.warn()` mostrar aviso consola.
 
@@ -102,9 +108,39 @@
 
 `splice(2,0,"a","b")` añade elementos en posicion dada.
 
-`toString()` Convierte en cadena.
+`toString()` convierte en cadena.
 
 `unshift()` elimina primera posición.
+
+### Math
+
+`abs` valor absoluto.
+
+`ceil` redondeo a entero inmediato superior.
+
+`floor` redondeo a entero inmediato inferior.
+
+`max` máximo entre varios números.
+
+`min` mínimo entre varios números.
+
+`pow` potencia.
+
+`random` aleatorio entre 0 y 1.
+
+`Math.floor((Math.random() * 10) + 1)` aleatorio entre 1 y 10.
+
+`round` redondeo al entero más cercano.
+
+`trunc` devuelve parte entera.
+
+### JSON
+
+`decodeURIComponent` descodifica URI.
+
+`parse` convierte cadena JSON a objeto JS.
+
+`stringify` convierte objeto JS a cadena JSON.
 
 ### Salidas de typeof()
 
