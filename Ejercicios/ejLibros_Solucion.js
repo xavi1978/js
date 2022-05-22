@@ -23,6 +23,7 @@ class Libro {
 		let td_edicion = document.createElement("td");
 		let td_precio = document.createElement("td");
 		let td_tematica = document.createElement("td");
+		let td_eliminar = document.createElement("td");
 
 		td_sn.innerHTML = this.sn;
 		td_titulo.innerHTML = this.titulo;
