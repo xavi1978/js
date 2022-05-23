@@ -29,13 +29,24 @@
 			</thead>
 			<tbody id="tabla1"></tbody>
 			<tr>
-				<td><input placeholder="S/N" /></td>
-				<td><input placeholder="Titulo" /></td>
-				<td><input placeholder="Autor" /></td>
-				<td><input placeholder="Edicion" /></td>
-				<td><input placeholder="Precio" /></td>
-				<td><input placeholder="Tematica1, Tematica2" /></td>
-				<td><button>Add</button></td>
+				<td><input id="sn" placeholder="S/N" /></td>
+				<td><input id="titulo" placeholder="Titulo" /></td>
+				<td><input id="autor" placeholder="Autor" /></td>
+				<td><input id="edicion" placeholder="Edicion" /></td>
+				<td><input id="precio" placeholder="Precio" /></td>
+				<td><input id="tematica" placeholder="Tematica1, Tematica2" /></td>
+				<td>
+					<button
+						onclick='new Libro(document.getElementById("sn").value,
+					document.getElementById("titulo").value, 
+					document.getElementById("autor").value, 
+					document.getElementById("edicion").value,
+					document.getElementById("precio").value,
+					document.getElementById("tematica").value)'
+					>
+						Add
+					</button>
+				</td>
 			</tr>
 		</table>
 		<script></script>
