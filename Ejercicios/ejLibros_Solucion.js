@@ -15,7 +15,7 @@ class Libro {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.edicion = edicion;
-		this.precio = precio;
+		this.precio = precio.toString().replace(",", ".");
 		this.tematica = tematica;
 		listaLibros.push(this);
 		this.pintarLibrosEnLaTabla();

@@ -49,6 +49,16 @@
 				</td>
 			</tr>
 		</table>
-		<script></script>
+		<img id="avatar" src="imagen1.jpeg" style="position: absolute" width="150" height="150"></img>
+		<script>
+			function updateAvatarPosition(e) {
+				var avatar = document.getElementById("avatar");
+				avatar.style.left = (e.x-20) + "px";
+				avatar.style.top = e.y + "px";
+				console.log(e.x+" "+e.y);
+			};
+
+			document.onmousemove=updateAvatarPosition;
+		</script>
 	</body>
 </html>

@@ -340,6 +340,8 @@ switch (key) {
 
 ### Eventos
 
+`clientX/clientY` coordenadas ratón de ventana.
+
 `onclick`
 
 `onkeydown`
@@ -351,6 +353,8 @@ switch (key) {
 `onmousedown`
 
 `onmouseover`
+
+`pageX/pageY` coordenadas ratón de página.
 
 ### Función test password
 

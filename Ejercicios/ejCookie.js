@@ -11,7 +11,24 @@ function funcion3() {
 	document.getElementById("cantidad").style.visibility = "visible";
 	document.getElementById("fecha").style.visibility = "hidden";
 }
-document.getElementById("botonSelDias").addEventListener("click", funcion5);
+
+document.getElementById("createCookie1").addEventListener("click", funcion9);
+function funcion9() {
+	let campo = document.getElementById("inputDate").value;
+	let resto = new Date(campo) - new Date();
+	let dias = resto / 1000 / 60 / 60 / 24;
+	console.log(dias);
+	console.log(Math.ceil(dias));
+
+	let nameCookie = document.getElementById("namecookie").value;
+	setCookie(
+		nameCookie,
+		document.getElementById("valueCookie").value,
+		Math.ceil(dias)
+	);
+	console.log("Created cookie= " + getCookie(nameCookie));
+}
+document.getElementById("createCookie2").addEventListener("click", funcion5);
 function funcion5() {
 	setCookie(
 		document.getElementById("nameCookie"),
