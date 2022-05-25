@@ -5,6 +5,7 @@ function funcion1() {
 document.getElementById("botonSelFecha").addEventListener("click", funcion2);
 function funcion2() {
 	document.getElementById("fecha").style.visibility = "visible";
+	document.getElementById("cantidad").style.visibility = "hidden";
 }
 document.getElementById("botonSelDias").addEventListener("click", funcion3);
 function funcion3() {
@@ -20,7 +21,7 @@ function funcion9() {
 	console.log(dias);
 	console.log(Math.ceil(dias));
 
-	let nameCookie = document.getElementById("namecookie").value;
+	let nameCookie = document.getElementById("nameCookie").value;
 	setCookie(
 		nameCookie,
 		document.getElementById("valueCookie").value,
@@ -31,15 +32,17 @@ function funcion9() {
 document.getElementById("createCookie2").addEventListener("click", funcion5);
 function funcion5() {
 	setCookie(
-		document.getElementById("nameCookie"),
-		document.getElementById("valueCookie"),
-		document.getElementById("anos").value * 365
+		document.getElementById("nameCookie").value,
+		document.getElementById("valueCookie").value,
+		new Number(document.getElementById("anos").value * 365) +
+			new Number(document.getElementById("mes").value * 30) +
+			new Number(document.getElementById("dias").value)
 	);
 	console.log(document.getElementById("anos").value);
 	console.log(
-		document.getElementById("anos").value * 365 +
-			document.getElementById("mes").value * 30 +
-			document.getElementById("dias").value
+		new Number(document.getElementById("anos").value * 365) +
+			new Number(document.getElementById("mes").value * 30) +
+			new Number(document.getElementById("dias").value)
 	);
 	console.log("Created cookie= " + getCookie(nameCookie));
 }

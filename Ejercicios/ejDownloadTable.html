@@ -68,20 +68,42 @@
 					//rows would be accessed using the "row" variable assigned in the for loop
 					//Get each cell value/column from the row
 					console.log(row.cells.length);
+
+					// column1 = row.cells[0].innerText;
+					// column2 = row.cells[1].innerText;
+					// column3 = row.cells[2].innerText;
+					// column4 = row.cells[3].innerText;
+
 					if (row.cells.length == 1) {
 						column1 = row.cells[0].innerText;
+						rows.push([column1]);
 					}
 					if (row.cells.length == 2) {
+						column1 = row.cells[0].innerText;
 						column2 = row.cells[1].innerText;
+						rows.push([column1]);
+						rows.push([column2]);
 					}
 					if (row.cells.length == 3) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
 						column3 = row.cells[2].innerText;
+						rows.push([column1]);
+						rows.push([column2]);
+						rows.push([column3]);
 					}
 					if (row.cells.length == 4) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
+						column3 = row.cells[2].innerText;
 						column4 = row.cells[3].innerText;
+						rows.push([column1]);
+						rows.push([column2]);
+						rows.push([column3]);
+						rows.push([column4]);
 					}
 					/* add a new records in the array */
-					rows.push([column1, column2, column3, column4]);
+					// rows.push([column1, column2, column3, column4]);
 				}
 				csvContent = "data:text/csv;charset=utf-8,";
 				/* add the column delimiter as comma(,) and each row splitted by new line character (\n) */

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//comparable
+			//comparator
+			const arrayObjetos = [
+				{ nombre: "Juan", edad: 16 },
+				{ nombre: "Pepe", edad: 15 },
+				{ nombre: "Pepe", edad: 17 },
+				{ nombre: "Pepe", edad: 14 },
+			];
+			console.log(arrayObjetos);
+			let sorted = arrayObjetos.sort((a, b) => {
+				if (a.nombre < b.nombre) {
+					return -1;
+				}
+				if (a.nombre < b.nombre) {
+					return 1;
+				}
+				// nombre es ==
+				if (a.edad < b.edad) {
+					return -1;
+				}
+				if (a.edad > b.edad) {
+					return 1;
+				}
+				return 0;
+			});
+			console.log(sorted);
+			/*
+			// const array = [5, 8, 1, 12, 4, 0, 2, 11, 111, -3, -25];
+			const array = [0, 1, 1.5, 1.6, 1.1, 1.2, 1.3, 2.0, 1.4];
+			// const array = [0, 5, 4, 8, 55, 54];
+			// const array = [80, 5, 8, 14, -80];
+			console.log(array);
+			// console.log(array.sort()); // para texto
+
+			function ordenar(array) {
+				let copiaArray = [].concat(array);
+				let arraySalida = [];
+
+				while (copiaArray.length > 1) {
+					let temporal = copiaArray[0];
+
+					for (let i = 0; i < copiaArray.length; i++) {
+						if (temporal > copiaArray[i]) {
+							temporal = copiaArray[i];
+							// console.log(copiaArray[i]);
+						}
+					}
+					console.warn(temporal);
+					arraySalida.push(temporal);
+					// console.log(copiaArray);
+					// console.log("posicion=" + copiaArray.indexOf(temporal));
+					copiaArray.splice(copiaArray.indexOf(temporal), 1);
+					// console.log(copiaArray);
+					// debugger; //break;
+				}
+				arraySalida.push(copiaArray[0]);
+				return arraySalida;
+			}
+			console.log(ordenar(array));
+			*/
+		</script>
+	</body>
+</html>
