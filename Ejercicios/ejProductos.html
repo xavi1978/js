@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="text" placeholder="nombre" id="inputNombre" />
+		<input type="text" placeholder="IU" id="inputIU" />
+		<input type="text" placeholder="precio" id="inputPrecio" />
+		<button onclick="funcionCrearProducto()">Crear</button>
+		<button onclick="pintarProductosOrdenNombre()">Ordenar por nombre</button>
+		<button onclick="pintarProductosOrdenPorPrecio()">
+			Ordenar por precio
+		</button>
+		<button onclick="pintarProductosOrdenIU">Ordenar por IU</button>
+
+		<script>
+			"use strict";
+			const inputNombre = document.getElementById("inputNombre");
+			const inputIU = document.getElementById("inputIU");
+			const inputPrecio = document.getElementById("inputPrecio");
+			let listaProductos = [];
+			class Producto {
+				constructor(nombre, iu, precio) {
+					this.nombre = nombre;
+					this.iu = iu;
+					this.precio = precio;
+					listaProductos.push(this);
+					console.log(listaProductos);
+					pintarProductosOrdenPorPrecio(listaProductos);
+				}
+			}
+
+			function pintarProductosOrdenNombre() {
+				let listaProductosDup = [].concat(listaProductos);
+				listaProductosDup.sort((a, b) => {
+					if (a.nombre > b.nombre) {
+						return 1;
+					}
+					if (a.nombre < b.nombre) {
+						return -1;
+					}
+					return 0;
+				});
+				console.table(listaProductosDup);
+			}
+			function pintarProductosOrdenIU() {
+				let listaProductosDup2 = [].concat(listaProductos);
+				listaProductosDup2.sort((a, b) => {
+					if (a.iu > b.iu) {
+						return 1;
+					}
+					if (a.iu < b.iu) {
+						return -1;
+					}
+					return 0;
+				});
+				console.table(listaProductosDup2);
+			}
+			function pintarProductosOrdenPorPrecio(lista) {
+				//todo: ordenar por precio
+				let listaProductosDup3 = [].concat(listaProductos);
+				listaProductosDup3.sort((a, b) => {
+					if (a.precio > b.precio) {
+						return 1;
+					}
+					if (a.precio < b.precio) {
+						return -1;
+					}
+					return 0;
+				});
+				console.table(listaProductosDup3);
+			}
+			function funcionCrearProducto() {
+				let nombre = inputNombre.value;
+				let iu = inputIU.value;
+				let precio = inputPrecio.value;
+				let booleanNombre, booleanPrecio;
+				booleanNombre = booleanPrecio = false;
+				if (nombre != "") {
+					booleanNombre = true;
+				}
+				if (iu == "") {
+					iu = generarIUAleatorio();
+				}
+				if (precio != "") {
+					precio = precio.replaceAll(",", ".");
+					if (!isNaN(precio)) {
+						booleanPrecio = true;
+					}
+				}
+				console.log(nombre + " " + iu + " " + precio);
+				if (booleanNombre && booleanPrecio) {
+					new Producto(nombre, iu, precio);
+				} else {
+					//todo: Mostrar algo un poco mejor
+					console.log("ERROR: no se pudo crear el producto");
+				}
+			}
+			function generarIUAleatorio(largo = 5) {
+				let characters =
+					"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+				let result = "";
+				let lengthCharacters = characters.length;
+				for (let i = 0; i < largo; i++) {
+					result += characters.charAt(
+						Math.floor(Math.random() * lengthCharacters)
+					);
+				}
+
+				// todo: comprobar que el "result" no existe en la lista.
+				return result;
+			}
+			console.log(generarIUAleatorio());
+
+			function pintarTabla(listaProd) {
+				let table = document.createElement("table");
+				for (let i = 0; i < listaProd.length; i++) {
+					let tr = document.createElement("tr");
+					let td = document.createElement("td");
+					td.innerHTML = listaProd[i].nombre;
+					tr.appendChild(td);
+					td.innerHTML = listaProd[i].iu;
+					tr.appendChild(td);
+					td.innerHTML = listaProd[i].precio;
+					tr.appendChild(td);
+					table.appendChild(tr);
+				}
+				document.getElementsByTagName("body")[0].appendChild(table);
+			}
+
+			pintarTabla(listaProductos);
+
+			//testing
+			new Producto("abc", generarIUAleatorio, "1");
+			new Producto("bcd", generarIUAleatorio, "5");
+			new Producto("acd", generarIUAleatorio, "1");
+			new Producto("acd", "252FG", "8");
+			console.assert(listaProductos[0].nombre == "abc");
+			console.assert(listaProductos[0].precio == "1");
+			console.assert(listaProductos[1].nombre == "bcd");
+			console.assert(listaProductos[1].precio == "5");
+			console.assert(listaProductos[3].nombre == "acd");
+			console.assert(listaProductos[3].iu == "252FG");
+			console.assert(listaProductos[3].precio == "8");
+
+			// listaProductos = [];
+
+			//"nombre", "IU":3.05;"nombre1", "IU1":3.05;
+		</script>
+	</body>
+</html>

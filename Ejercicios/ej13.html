@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			function tamanoVentana() {
+				var dimensiones = [];
+
+				if (typeof window.innerWidth == "number") {
+					// No es IE
+					dimensiones = [window.innerWidth, window.innerHeight];
+				} else if (
+					document.documentElement &&
+					(document.documentElement.clientWidth ||
+						document.documentElement.clientHeight)
+				) {
+					// IE6 en modo estandar
+					dimensiones = [
+						document.documentElement.clientWidth,
+						document.documentElement.clientHeight,
+					];
+				} else if (
+					document.body &&
+					(document.body.clientWidth || document.body.clientHeight)
+				) {
+					// IE en modo quirks
+					dimensiones = [document.body.clientWidth, document.body.clientHeight];
+				}
+				return dimensiones;
+			}
+
+			function dondeHasPinchado(elEvento) {
+				var evento = elEvento || window.event;
+				var coordenadaX = evento.clientX;
+				var coordenadaY = evento.clientY;
+				var dimension = tamanoVentana();
+
+				var tamanoX = dimension[0];
+				var tamanoY = dimension[1];
+				var posicionHorizontal = "";
+				var posicionVertical = "";
+
+				if (coordenadaX > tamanoX / 2) {
+					posicionHorizontal = "Derecha";
+				} else {
+					posicionHorizontal = "Izquierda";
+				}
+
+				if (coordenadaY > tamanoY / 2) {
+					posicionVertical = " abajo.";
+				} else {
+					posicionVertical = " arriba.";
+				}
+
+				alert(posicionHorizontal + posicionVertical);
+			}
+			document.onclick = dondeHasPinchado;
+		</script>
+	</head>
+	<body></body>
+</html>
