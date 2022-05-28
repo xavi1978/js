@@ -139,6 +139,12 @@
 					td_precio.innerHTML = listaProd[i].precio;
 					tr.appendChild(td_precio);
 					table.appendChild(tr);
+					if (td_precio.innerHTML < 5) {
+						td_precio.style.color = "blue";
+					}
+					if (td_precio.innerHTML == 5) {
+						td_precio.style.color = "green";
+					}
 					if (td_precio.innerHTML > 5) {
 						td_precio.style.color = "red";
 					}
