@@ -5,6 +5,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			table,
+			tr,
+			td {
+				border: 1px black solid;
+				border-collapse: collapse;
+			}
+		</style>
 	</head>
 	<body>
 		<input type="text" placeholder="nombre" id="inputNombre" />
@@ -15,7 +23,8 @@
 		<button onclick="pintarProductosOrdenPorPrecio()">
 			Ordenar por precio
 		</button>
-		<button onclick="pintarProductosOrdenIU">Ordenar por IU</button>
+		<button onclick="pintarProductosOrdenIU()">Ordenar por IU</button>
+		<button onclick="pintarTabla(listaProductos)">Mostrar tabla</button>
 
 		<script>
 			"use strict";
@@ -120,24 +129,43 @@
 				let table = document.createElement("table");
 				for (let i = 0; i < listaProd.length; i++) {
 					let tr = document.createElement("tr");
-					let td = document.createElement("td");
-					td.innerHTML = listaProd[i].nombre;
-					tr.appendChild(td);
-					td.innerHTML = listaProd[i].iu;
-					tr.appendChild(td);
-					td.innerHTML = listaProd[i].precio;
-					tr.appendChild(td);
+					let td_nombre = document.createElement("td");
+					td_nombre.innerHTML = listaProd[i].nombre;
+					tr.appendChild(td_nombre);
+					let td_iu = document.createElement("td");
+					td_iu.innerHTML = listaProd[i].iu;
+					tr.appendChild(td_iu);
+					let td_precio = document.createElement("td");
+					td_precio.innerHTML = listaProd[i].precio;
+					tr.appendChild(td_precio);
 					table.appendChild(tr);
+					if (td_precio.innerHTML > 5) {
+						td_precio.style.color = "red";
+					}
 				}
+
+				let tr_footer = document.createElement("tr");
+				let td_total = document.createElement("td");
+				td_total.colSpan = "2";
+				td_total.innerHTML = "Total";
+				tr_footer.appendChild(td_total);
+
+				let td_suma = document.createElement("td");
+				let total = 0;
+				for (let i = 0; i < listaProd.length; i++) {
+					total += parseInt(listaProd[i].precio);
+				}
+				td_suma.innerHTML = total;
+				td_suma.id = "suma";
+				tr_footer.appendChild(td_suma);
+				table.appendChild(tr_footer);
 				document.getElementsByTagName("body")[0].appendChild(table);
 			}
 
-			pintarTabla(listaProductos);
-
 			//testing
-			new Producto("abc", generarIUAleatorio, "1");
-			new Producto("bcd", generarIUAleatorio, "5");
-			new Producto("acd", generarIUAleatorio, "1");
+			new Producto("abc", generarIUAleatorio(), "1");
+			new Producto("bcd", generarIUAleatorio(), "5");
+			new Producto("acd", generarIUAleatorio(), "1");
 			new Producto("acd", "252FG", "8");
 			console.assert(listaProductos[0].nombre == "abc");
 			console.assert(listaProductos[0].precio == "1");
