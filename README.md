@@ -18,11 +18,15 @@
 
 `console.error()` mostrar error consola.
 
+`console.group()` / `console.groupEnd()` agrupar mensajes consola.
+
 `console.info()` mostrar mensaje consola.
 
 `console.log()` mostrar mensaje consola.
 
 `console.table()` mostrar tabla consola.
+
+`console.time()` /`console.timeEnd()` mostrar tiempo proceso.
 
 `console.trace()` trazar como se ha llegado a tal punto.
 
